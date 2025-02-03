@@ -11,8 +11,9 @@ export default function Navbar() {
                         <div className="col-12">
                             <div className="header__content">
                                 <a href="index.html" className="header__logo">
-                                    <img src="img/logo.svg" alt="" />
+                                    <img src="/images/logo/Flicko.png" alt="Logo" className="logo-img" />
                                 </a>
+
                                 <div className="header__categories">
                                     <button className="header__categories-btn" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                                         <span></span>

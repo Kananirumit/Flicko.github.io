@@ -5155,3 +5155,13 @@ body::-webkit-scrollbar-thumb {
   border-radius: 4px !important;
   cursor: pointer;
 }
+.header__logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo-img {
+  width: 100%; 
+  height: auto;     
+}
