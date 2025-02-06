@@ -5,7 +5,7 @@ const router = express.Router();
 const homeController = require('./controller/homeController');
 const userController = require('./controller/userController');
 
-// Content Routes
+// home controller Routes
 router.get('/content', homeController.getAllContent);
 router.get('/content/:genreId', homeController.getMoviesByGenre);
 router.get('/content/:id/details', homeController.getMovieDetails);

@@ -5,7 +5,7 @@ const Rating = require('../models/ratingsModel');
 const UpcomingMovie = require('../models/upcomingMoviesModel');
 
 // --- Content and Genre Controller ---
-const getAllContent = async (_, res) => {
+const getAllContent = async (req, res) => {
   try {
     const content = await Content.find().populate('contentTypeId').populate('genres');
     res.json(content);
@@ -37,7 +37,7 @@ const getMovieDetails = async (req, res) => {
   }
 };
 
-const getAllGenres = async (_, res) => {
+const getAllGenres = async (req, res) => {
   try {
     const genres = await Genres.find();
     res.json(genres);
@@ -46,7 +46,7 @@ const getAllGenres = async (_, res) => {
   }
 };
 
-const getUpcomingMovies = async (_, res) => {
+const getUpcomingMovies = async (req, res) => {
   try {
     const movies = await UpcomingMovie.find();
     res.json(movies);
@@ -55,7 +55,7 @@ const getUpcomingMovies = async (_, res) => {
   }
 };
 
-const getAllContentTypes = async (_, res) => {
+const getAllContentTypes = async (req, res) => {
   try {
     const contentTypes = await ContentTypes.find();
     res.json(contentTypes);
