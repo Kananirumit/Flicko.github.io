@@ -1,0 +1,22 @@
+<form action="/login" method="POST" class="sign__form">
+    <a href="index.html" class="sign__logo">
+        <img src="img/logo.svg" alt="FlixGo">
+    </a>
+
+    <div class="sign__group">
+        <input type="email" name="email" class="sign__input" placeholder="Email" required>
+    </div>
+
+    <div class="sign__group">
+        <input type="password" name="password" class="sign__input" placeholder="Password" required>
+    </div>
+
+    <div class="sign__group sign__group--checkbox">
+        <input id="remember" name="remember" type="checkbox" checked>
+        <label for="remember">Remember me</label>
+    </div>
+    
+    <button class="sign__btn" type="submit"><span>Sign in</span></button>
+
+    <span class="sign__text"><a href="forgot.html">Forgot password?</a></span>
+</form>

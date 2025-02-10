@@ -1,0 +1,131 @@
+<body>
+  <main class="main">
+    <div class="container-fluid">
+      <div class="row">
+        <!-- main title -->
+        <div class="col-12">
+          <div class="main__title">
+            <h2>Hollywood</h2>
+            <a href="add-item.html" class="main__title-link">
+              <span>Add Item</span>
+            </a>
+          </div>
+        </div>
+        <!-- end main title -->
+      </div>
+
+      <div class="row">
+        <!-- dashbox -->
+        <div class="col-12 col-xl-12">
+          <div class="dashbox">
+            <div class="dashbox__table-wrap dashbox__table-wrap--1">
+              <table class="dashbox__table">
+                <thead>
+                  <tr class="text-white">
+                    <th>ID</th>
+                    <th>POSTER</th>
+                    <th>TITLE</th>
+                    <th>RATING</th>
+                    <th>GENRES</th>
+                    <th>RUNTIME</th>
+                    <th>ACTION</th>
+                  </tr>
+                </thead>
+                <tbody class="text-white">
+                  <% movies.forEach((movie, hollywood) => { %>
+                  <tr>
+                    <td><%= (currentPage - 1) * 10 + hollywood + 1 %></td>
+
+                    <!-- Movie Poster -->
+                    <td>
+                      <img
+                        src="<%= movie.posterUrl || 'assets/img/default-poster.jpg' %>"
+                        alt="<%= movie.title %> Poster"
+                        width="50"
+                        onerror="this.onerror=null; this.src='assets/img/default-poster.jpg';"
+                      />
+                    </td>
+
+                    <!-- Movie Title -->
+                    <td><%= movie.title || "N/A" %></td>
+
+                    <!-- Movie Rating -->
+                    <td>
+                      <%= movie.rating ? movie.rating.toFixed(1) : "N/A" %>
+                    </td>
+
+                    <!-- Movie Genres -->
+                    <td><%= movie.genres || "N/A" %></td>
+
+                    <!-- Movie Runtime -->
+                    <td>
+                      <%= movie.runtime ? movie.runtime + " min" : "N/A" %>
+                    </td>
+
+                    <!-- Watch Button -->
+                    <td>
+                      <% if (movie.watchLink && movie.watchLink !== "#") { %>
+                        <a href="<%= movie.watchLink %>" target="_blank" class="btn btn-primary">Watch</a>
+                      <% } else { %>
+                        <span class="text-white">Not Available</span>
+                      <% } %>
+                    </td>
+                    
+                    
+                  </tr>
+                  <% }) %>
+                </tbody>
+              </table>
+
+              <!-- Pagination Section -->
+              <div class="pagination-container">
+                <% if (currentPage > 1) { %>
+                  <a href="/hollywood?page=<%= currentPage - 1 %>" class="pagination-btn">
+                    « Prev
+                  </a>
+                <% } %>
+
+                <% for (let i = 1; i <= totalPages; i++) { %>
+                  <% if (i >= currentPage - 2 && i <= currentPage + 2) { %>
+                    <a href="/hollywood?page=<%= i %>" 
+                       class="pagination-btn <%= i === currentPage ? 'active' : '' %>">
+                      <%= i %>
+                    </a>
+                  <% } %>
+                <% } %>
+
+                <% if (currentPage < totalPages) { %>
+                  <a href="/hollywood?page=<%= currentPage + 1 %>" class="pagination-btn">
+                    Next »
+                  </a>
+                <% } %>
+              </div>
+              <!-- End Pagination -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+</body>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    document.querySelectorAll(".watch-btn").forEach((button) => {
+      button.addEventListener("click", function () {
+        const movieId = this.getAttribute("data-movie-id");
+
+        if (!movieId) {
+          alert("Movie ID not found!");
+          return;
+        }
+
+        console.log("Opening IMDb for:", movieId); // Debugging log
+
+        // Redirect to IMDb movie page
+        const imdbUrl = `https://www.imdb.com/title/${movieId}`;
+        window.open(imdbUrl, "_blank");
+      });
+    });
+  });
+</script>

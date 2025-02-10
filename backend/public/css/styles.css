@@ -2653,3 +2653,33 @@ body::-webkit-scrollbar-thumb {
   border-radius: 4px !important;
   cursor: pointer;
 }
+.pagination-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  gap: 8px;
+}
+
+.pagination-btn {
+  padding: 5px 10px;
+  text-decoration: none;
+  font-weight: bold;
+  color: white;
+  background: linear-gradient(90deg, #ff2a6d, #ff5f5f);
+  border-radius: 5px;
+  transition: background 0.3s ease, transform 0.2s;
+  box-shadow: 0px 3px 10px rgba(255, 42, 109, 0.4);
+}
+
+.pagination-btn:hover {
+  background: linear-gradient(90deg, #ff5f5f, #ff2a6d);
+  transform: scale(1.05);
+}
+
+.pagination-btn.active {
+  background: white;
+  color: #ff2a6d;
+  pointer-events: none;
+  font-weight: bold;
+  border: 2px solid #ebdce1;
+}

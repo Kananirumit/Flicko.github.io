@@ -1,0 +1,45 @@
+<main class="d-flex align-items-center justify-content-center min-vh-100">
+  <div class="container">
+      <div class="row justify-content-center">
+          <div class="col-md-6">
+              <div class="card shadow-lg border-0 rounded-4" style="background: #1c1c1c; color: #fff; padding: 20px;">
+                  <div class="card-header text-center" style="background: transparent; border-bottom: none;">
+                      <h4 class="mb-0" style="font-weight: bold; color: #ff3d71;">EDIT USER</h4>
+                  </div>
+                  <div class="card-body">
+                      <form action="/update/<%= user._id %>" method="POST">
+                          <div class="mb-3">
+                              <label class="form-label" style="color: #fff;">First Name:</label>
+                              <input type="text" name="firstName" class="form-control rounded-3" 
+                                     style="background: #292929; border: 1px solid #ff3d71; color: #fff;"
+                                     value="<%= user.firstName %>" required>
+                          </div>
+                          <div class="mb-3">
+                              <label class="form-label" style="color: #fff;">Last Name:</label>
+                              <input type="text" name="lastName" class="form-control rounded-3" 
+                                     style="background: #292929; border: 1px solid #ff3d71; color: #fff;"
+                                     value="<%= user.lastName %>" required>
+                          </div>
+                          <div class="mb-3">
+                              <label class="form-label" style="color: #fff;">Email:</label>
+                              <input type="email" name="email" class="form-control rounded-3" 
+                                     style="background: #292929; border: 1px solid #ff3d71; color: #fff;"
+                                     value="<%= user.email %>" required>
+                          </div>
+                          <div class="text-center">
+                              <button type="submit" class="btn w-100 rounded-3 fw-bold"
+                                      style="background: linear-gradient(135deg, #ff3d71, #ff6b9e); border: none; color: #fff;">
+                                  UPDATE
+                              </button>
+                              <a href="/index" class="btn w-100 rounded-3 mt-2"
+                                 style="background: transparent; border: 1px solid #ff3d71; color: #ff3d71;">
+                                  CANCEL
+                              </a>
+                          </div>
+                      </form>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+</main>
