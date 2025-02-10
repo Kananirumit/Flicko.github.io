@@ -3,9 +3,7 @@ const mongoose = require("mongoose");
 const indianSchema = new mongoose.Schema({
   title: { type: String, required: true },
   year: { type: Number, required: true },
-  genres: { 
-    name: { type: String, required: true }  // Fixed this part
-  },
+  genre: { type: String, required: true } ,
   posterUrl: { type: String, required: true },
   director: { type: String, required: true },
   cast: { type: String, required: true },

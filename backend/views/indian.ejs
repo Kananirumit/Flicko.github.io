@@ -19,56 +19,49 @@
           <div class="col-12 col-xl-12">
             <div class="dashbox">
               <div class="dashbox__table-wrap dashbox__table-wrap--1">
-                <table class="dashbox__table">
-                  <thead>
-                    <tr class="text-white">
-                      <th>ID</th>
-                      <th>POSTER</th>
-                      <th>TITLE</th>
-                      <th>YEAR</th>
-                      <th>GENRE</th>
-                      <th>DIRECTOR</th>
-                      <th>CAST</th>
-                      <th>OVERVIEW</th>
-                    </tr>
-                  </thead>
-                  <tbody class="text-white">
-                    <% indianMovies.forEach((movie, index) => { %>
-                    <tr>
-                      <td><%= (currentPage - 1) * 10 + index + 1 %></td>
-  
-                      <!-- Movie Poster -->
-                      <td>
-                        <img
-                          src="<%= movie.Poster_url || 'assets/img/default-poster.jpg' %>"
-                          alt="<%= movie.title %> Poster"
-                          width="50"
-                          onerror="this.onerror=null; this.src='assets/img/default-poster.jpg';"
-                        />
-                      </td>
-  
-                      <!-- Movie Title -->
-                      <td><%= movie.title || "N/A" %></td>
-  
-                      <!-- Movie Year -->
-                      <td><%= movie.year || "N/A" %></td>
-  
-                      <!-- Movie Genre -->
-                      <td><%= movie.genre || "N/A" %></td>
-  
-                      <!-- Movie Director -->
-                      <td><%= movie.director || "N/A" %></td>
-  
-                      <!-- Movie Cast -->
-                      <td><%= movie.cast || "N/A" %></td>
-  
-                      <!-- Movie Overview -->
-                      <td><%= movie.overview || "N/A" %></td>
-                    </tr>
-                    <% }) %>
-                  </tbody>
-                </table>
-  
+                <table class="table text-white">
+                    <thead>
+                      <tr>
+                        <th>#</th>
+                        <th>Poster</th>
+                        <th>Title</th>
+                        <th>Year</th>
+                        <th>Genre</th>
+                        <th>Director</th>
+                        <th>Cast</th>
+                        <th>Overview</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <% if (indianMovies.length === 0) { %>
+                        <tr>
+                          <td colspan="8" class="text-center">No movies found</td>
+                        </tr>
+                      <% } else { %>
+                        <% indianMovies.forEach((movie, index) => { %>
+                          <tr>
+                            <td><%= (currentPage - 1) * 10 + index + 1 %></td>
+                            <td>
+                                <img src="<%= movie.posterUrl ? movie.posterUrl : 'assets/img/default-poster.jpg' %>"
+                                     alt="<%= movie.title %> Poster"
+                                     width="70"
+                                     onerror="this.onerror=null; this.src='assets/img/default-poster.jpg';">
+                              </td>
+                              
+          
+                            <td><%= movie.title || "N/A" %></td>
+                            <td><%= movie.year || "N/A" %></td>
+                            <td><%= movie.genre || "N/A" %></td>
+                            
+                            <td><%= movie.director || "N/A" %></td>
+                            <td><%= movie.cast || "N/A" %></td>
+                            <td><%= movie.overview || "N/A" %></td>
+                          </tr>
+                        <% }) %>
+                      <% } %>
+                    </tbody>
+                  </table>
+                  
                 <!-- Pagination Section -->
                 <div class="pagination-container">
                   <% if (currentPage > 1) { %>

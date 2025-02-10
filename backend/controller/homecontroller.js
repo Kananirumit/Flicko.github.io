@@ -2,6 +2,7 @@ require("dotenv").config();
 const axios = require("axios");
 const Content = require("../models/hollywoodModel");
 const Indian = require("../models/indianModel");
+const Web = require("../models/webseriesModel");
 const ContentTypes = require("../models/contentTypesModel");
 const Genres = require("../models/genresModel");
 const UpcomingMovie = require("../models/upcomingMoviesModel");
@@ -183,18 +184,47 @@ const getPaginatedMovies = async (req, res) => {
 };
 const getIndianMovies = async (req, res) => {
   try {
-    const movies = await Indian.find({}, "title watchLink");
-    
-    console.log("✅ Indian Movie Data Fetched:", movies); // Debugging
+    const page = parseInt(req.query.page) || 1;
+    const limit = 10;
+    const skip = (page - 1) * limit;
 
-    if (!movies.length) {
-      console.log("⚠️ No movies found in the database.");
-    }
+    let totalMovies = await Indian.countDocuments();
+    let totalPages = Math.ceil(totalMovies / limit);
+
+    let indianMovies = await Indian.find().skip(skip).limit(limit);
+
+    // Fetch poster if missing
+    const updatedMovies = await Promise.all(
+      indianMovies.map(async (movie) => {
+        if (!movie.posterUrl || movie.posterUrl === "N/A") {
+          try {
+            const response = await axios.get(
+              `http://www.omdbapi.com/?apikey=${OMDB_API_KEY}&t=${encodeURIComponent(movie.title)}`
+            );
+            const apiData = response.data;
+
+            if (apiData.Response !== "False") {
+              movie.posterUrl = apiData.Poster !== "N/A" ? apiData.Poster : "assets/img/default-poster.jpg";
+              movie.year = apiData.Year || movie.year;
+              movie.genre = apiData.Genre || movie.genre;
+              movie.director = apiData.Director || movie.director;
+              movie.cast = apiData.Actors || movie.cast;
+              movie.overview = apiData.Plot || movie.overview;
+
+              await movie.save();
+            }
+          } catch (error) {
+            console.error(`❌ Error fetching poster for ${movie.title}:`, error);
+          }
+        }
+        return movie;
+      })
+    );
 
     res.render("indian", {
-      indianMovies: movies,
-      currentPage: req.query.page ? parseInt(req.query.page) : 1,
-      totalPages: Math.ceil(movies.length / 10),
+      indianMovies: updatedMovies,
+      currentPage: page,
+      totalPages: totalPages
     });
   } catch (error) {
     console.error("❌ Error fetching Indian movies:", error);
