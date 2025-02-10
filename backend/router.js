@@ -16,6 +16,7 @@ router.get("/content-types", homeController.getAllContentTypes);
 router.post("/add-movie", homeController.addMovie);
 router.put("/update-movie/:id", homeController.updateMovie);
 router.get("/hollywood", homeController.getPaginatedMovies);
+router.get("/indian", homeController.getIndianMovies);
 
 // ✅ Dashboard Route (User List with Pagination)
 router.get("/index", userController.getUserList);

@@ -181,6 +181,26 @@ const getPaginatedMovies = async (req, res) => {
     res.render("index", { movies: [], currentPage: 1, totalPages: 1 });
   }
 };
+const getIndianMovies = async (req, res) => {
+  try {
+    const movies = await Indian.find({}, "title watchLink");
+    
+    console.log("✅ Indian Movie Data Fetched:", movies); // Debugging
+
+    if (!movies.length) {
+      console.log("⚠️ No movies found in the database.");
+    }
+
+    res.render("indian", {
+      indianMovies: movies,
+      currentPage: req.query.page ? parseInt(req.query.page) : 1,
+      totalPages: Math.ceil(movies.length / 10),
+    });
+  } catch (error) {
+    console.error("❌ Error fetching Indian movies:", error);
+    res.status(500).send("Internal Server Error");
+  }
+};
 
 // --- Export Controllers ---
 module.exports = {
@@ -192,5 +212,6 @@ module.exports = {
   getAllContentTypes,
   addMovie,
   updateMovie,
-  getPaginatedMovies
+  getPaginatedMovies,
+  getIndianMovies 
 };
