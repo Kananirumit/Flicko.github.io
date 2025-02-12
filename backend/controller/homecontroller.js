@@ -2,32 +2,58 @@ require("dotenv").config();
 const axios = require("axios");
 const Content = require("../models/hollywoodModel");
 const Indian = require("../models/indianModel");
-const Web = require("../models/webseriesModel");
+const AnimeModel = require("../models/animeModel");
+const Webseries = require("../models/webseriesModel");
 const ContentTypes = require("../models/contentTypesModel");
 const Genres = require("../models/genresModel");
 const UpcomingMovie = require("../models/upcomingMoviesModel");
 const fetchMoviePoster = require("../fetchMoviePoster");
 
-const OMDB_API_KEY = process.env.OMDB_API_KEY || "74a6f5ec"; // Use .env for security
+const OMDB_API_KEY_MOVIES = process.env.OMDB_API_KEY_MOVIES || "74a6f5ec"; // API key for English and Indian Movies
+const OMDB_API_KEY_SERIES = process.env.OMDB_API_KEY_SERIES || "8909b00d"; // API key for Web Series and Anime
 
 const getAllMovies = async (req, res) => {
   try {
     const movies = await Content.find({}, "title watchLink");
-
-    console.log("✅ Movie Data Fetched:", movies);
-
-    res.render("hollywood", {
-      movies,
-      currentPage: req.query.page ? parseInt(req.query.page) : 1,
-      totalPages: Math.ceil(movies.length / 10)
+    res.render("hollywood", { 
+      movies, 
+      currentPage: req.query.page ? parseInt(req.query.page) : 1, 
+      totalPages: Math.ceil(movies.length / 10) 
     });
   } catch (error) {
     console.error("❌ Error fetching movies:", error);
     res.status(500).send("Internal Server Error");
   }
 };
+const getPoster = async (title, type) => {
+  const existingMovie = await Content.findOne({ title });
 
+  if (existingMovie && existingMovie.posterUrl) {
+    return existingMovie.posterUrl;
+  }
 
+  const apiKey = type === "series" || type === "anime" ? OMDB_API_KEY_SERIES : OMDB_API_KEY_MOVIES;
+  const url = `http://www.omdbapi.com/?t=${encodeURIComponent(title)}&apikey=${apiKey}`;
+
+  try {
+    const response = await axios.get(url);
+    
+    if (response.data.Response === "False") {
+      console.warn(`⚠️ OMDB API Error: ${response.data.Error}`);
+      return "/assets/img/default-poster.jpg";
+    }
+
+    const posterUrl = response.data.Poster !== "N/A" ? response.data.Poster : "/assets/img/default-poster.jpg";
+
+    // Store the poster in MongoDB to prevent multiple API calls
+    await Content.updateOne({ title }, { $set: { posterUrl } }, { upsert: true });
+
+    return posterUrl;
+  } catch (error) {
+    console.error(`❌ Error fetching poster for ${title}:`, error);
+    return "/assets/img/default-poster.jpg";
+  }
+};
 
 // --- Get Movies by Genre ---
 const getMoviesByGenre = async (req, res) => {
@@ -87,13 +113,14 @@ const getAllContentTypes = async (_, res) => {
 };
 const addMovie = async (req, res) => {
   try {
-    const { title, releaseDate, rating, genres, runtime } = req.body;
-
+    const { title, releaseDate, rating, genres, runtime, type } = req.body;
+    
     if (!title) {
       return res.status(400).json({ message: "Title is required" });
     }
 
-    const omdbResponse = await axios.get(`https://www.omdbapi.com/?apikey=${OMDB_API_KEY}&t=${title}`);
+    const apiKey = type === "series" || type === "anime" ? OMDB_API_KEY_SERIES : OMDB_API_KEY_MOVIES;
+    const omdbResponse = await axios.get(`https://www.omdbapi.com/?apikey=${apiKey}&t=${title}`);
 
     if (!omdbResponse.data || omdbResponse.data.Response === "False") {
       return res.status(404).json({ message: "Movie not found in API" });
@@ -103,7 +130,6 @@ const addMovie = async (req, res) => {
     const posterUrl = movieData.Poster !== "N/A" ? movieData.Poster : "/img/default-poster.jpg";
     const processedRuntime = movieData.Runtime ? parseInt(movieData.Runtime.split(" ")[0], 10) : runtime;
 
-    // ✅ Fix: Ensure watchLink is set properly
     const watchLink = movieData.imdbID
       ? `https://www.imdb.com/title/${movieData.imdbID}/`
       : `https://www.google.com/search?q=${encodeURIComponent(title)}`;
@@ -124,6 +150,7 @@ const addMovie = async (req, res) => {
     res.status(500).json({ message: "Error adding movie", error: err.message });
   }
 };
+
 
 
 
@@ -184,53 +211,88 @@ const getPaginatedMovies = async (req, res) => {
 };
 const getIndianMovies = async (req, res) => {
   try {
-    const page = parseInt(req.query.page) || 1;
-    const limit = 10;
-    const skip = (page - 1) * limit;
+    let page = parseInt(req.query.page) || 1;
+    let limit = 10;
+    let skip = (page - 1) * limit;
 
-    let totalMovies = await Indian.countDocuments();
-    let totalPages = Math.ceil(totalMovies / limit);
+    const totalMovies = await Indian.countDocuments();
+    const totalPages = Math.ceil(totalMovies / limit);
+    const indianMovies = await Indian.find().skip(skip).limit(limit);
 
-    let indianMovies = await Indian.find().skip(skip).limit(limit);
-
-    // Fetch poster if missing
-    const updatedMovies = await Promise.all(
+    // Fetch missing posters
+    const updatedIndianMovies = await Promise.all(
       indianMovies.map(async (movie) => {
-        if (!movie.posterUrl || movie.posterUrl === "N/A") {
-          try {
-            const response = await axios.get(
-              `http://www.omdbapi.com/?apikey=${OMDB_API_KEY}&t=${encodeURIComponent(movie.title)}`
-            );
-            const apiData = response.data;
-
-            if (apiData.Response !== "False") {
-              movie.posterUrl = apiData.Poster !== "N/A" ? apiData.Poster : "assets/img/default-poster.jpg";
-              movie.year = apiData.Year || movie.year;
-              movie.genre = apiData.Genre || movie.genre;
-              movie.director = apiData.Director || movie.director;
-              movie.cast = apiData.Actors || movie.cast;
-              movie.overview = apiData.Plot || movie.overview;
-
-              await movie.save();
-            }
-          } catch (error) {
-            console.error(`❌ Error fetching poster for ${movie.title}:`, error);
-          }
+        if (!movie.posterUrl || movie.posterUrl === "/assets/img/default-poster.jpg") {
+          const posterUrl = await getPoster(movie.title, "movie");
+          await Indian.updateOne({ _id: movie._id }, { $set: { posterUrl } });
+          return { ...movie.toObject(), posterUrl };
         }
-        return movie;
+        return movie.toObject();
       })
     );
 
     res.render("indian", {
-      indianMovies: updatedMovies,
+      indianMovies: updatedIndianMovies,
       currentPage: page,
-      totalPages: totalPages
+      totalPages,
     });
   } catch (error) {
-    console.error("❌ Error fetching Indian movies:", error);
+    console.error("Error fetching Indian movies:", error);
     res.status(500).send("Internal Server Error");
   }
 };
+
+const getAllWebSeries = async (req, res) => {
+  try {
+    let page = parseInt(req.query.page) || 1;
+    let limit = 10;
+    let skip = (page - 1) * limit;
+
+    const totalSeries = await Webseries.countDocuments();
+    const totalPages = Math.ceil(totalSeries / limit);
+    const series = await Webseries.find().skip(skip).limit(limit);
+
+    // Fetch missing posters
+    const updatedSeries = await Promise.all(
+      series.map(async (s) => {
+        if (!s.posterUrl || s.posterUrl === "/assets/img/default-poster.jpg") {
+          const posterUrl = await getPoster(s.title, "series");
+          await Webseries.updateOne({ _id: s._id }, { $set: { posterUrl } });
+          return { ...s.toObject(), posterUrl };
+        }
+        return s.toObject();
+      })
+    );
+
+    res.render("webseries", { webSeries: updatedSeries, currentPage: page, totalPages });
+  } catch (error) {
+    console.error("❌ Error fetching Web Series:", error);
+    res.status(500).send("Internal Server Error");
+  }
+};
+const getAllAnime = async (req, res) => {
+  try {
+      const page = parseInt(req.query.page) || 1;
+      const limit = 10;
+      const skip = (page - 1) * limit;
+
+      // Fetch anime from database
+      const animeList = await AnimeModel.find().skip(skip).limit(limit);
+      const totalAnime = await AnimeModel.countDocuments();
+      const totalPages = Math.ceil(totalAnime / limit);
+
+      // Ensure animeList is passed correctly
+      res.render("anime", {
+          anime: animeList, 
+          currentPage: page,
+          totalPages: totalPages
+      });
+  } catch (error) {
+      console.error("Error fetching anime:", error);
+      res.status(500).send("Server Error");
+  }
+};
+
 
 // --- Export Controllers ---
 module.exports = {
@@ -242,6 +304,9 @@ module.exports = {
   getAllContentTypes,
   addMovie,
   updateMovie,
+  getPoster,
   getPaginatedMovies,
-  getIndianMovies 
+  getIndianMovies,
+  getAllWebSeries,
+  getAllAnime,
 };

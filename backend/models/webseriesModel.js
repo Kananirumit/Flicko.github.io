@@ -1,17 +1,17 @@
 const mongoose = require("mongoose");
 
-const webSchema = new mongoose.Schema({
+const webSeriesSchema = new mongoose.Schema({
   title: { type: String, required: true },
-  year_released: { type: Number, required: true },
-  Content_rating:{type:Number,required:true},
-  rating:{type:Number,required:true},
+  yearReleased: { type: Number, required: true },  // Match MongoDB field
+  contentRating: { type: String, required: true }, // Changed from Number to String
+  rating: { type: Number, required: true },
   posterUrl: { type: String, required: true },
-  genre: { type: String, required: true } ,
-  noofseasons: { type: String, required: true },
-  Description: { type: String, required: true },
-  Streaming_Platform: { type: String, required: true },
+  genre: { type: String, required: true },
+  noofSeasons: { type: String, required: true },  // Standardized field name
+  streamingPlatform: { type: String, required: true },  // Standardized field name
 });
 
 // Create Model
-const Web = mongoose.model("Web", webSchema);
-module.exports = Web;
+const WebSeries = mongoose.model("WebSeries", webSeriesSchema);
+module.exports = WebSeries;
+  

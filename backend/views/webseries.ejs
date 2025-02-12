@@ -1,0 +1,95 @@
+<body>
+    <main class="main">
+        <div class="container-fluid">
+            <div class="row">
+                <!-- Main Title -->
+                <div class="col-12">
+                    <div class="main__title">
+                        <h2>Web Series</h2>
+                        <a href="add-item.html" class="main__title-link">
+                            <span>Add Item</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-12 col-xl-12">
+                    <div class="dashbox">
+                        <div class="dashbox__table-wrap">
+                            <table class="table text-white">
+                                <thead>
+                                    <tr>
+                                        <th>#</th>
+                                        <th>Poster</th>
+                                        <th>Title</th>
+                                        <th>Year Released</th>
+                                        <th>Content Rating</th>
+                                        <th>Rating</th>
+                                        <th>Genre</th>
+                                        <th>No of Seasons</th>
+                                        <th>Streaming Platform</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <% if (webSeries.length === 0) { %>
+                                        <tr>
+                                            <td colspan="10" class="text-center">No web series found</td>
+                                        </tr>
+                                    <% } else { %>
+                                        <% webSeries.forEach((series, index) => { %>
+                                            <tr>
+                                                <td><%= (currentPage - 1) * 10 + index + 1 %></td>
+                                                <td>
+                                                    <img src="<%= series.posterUrl && series.posterUrl.trim() !== '' ? series.posterUrl : 'assets/img/default-poster.jpg' %>"
+                                                         alt="<%= series.title %> Poster"
+                                                         width="70"
+                                                         onerror="this.onerror=null; this.src='assets/img/default-poster.jpg';">
+                                                </td>
+                                                
+                                                <td><%= series.title || "N/A" %></td>
+                                                <td><%= series.yearReleased || "N/A" %></td>
+                                                <td><%= series.contentRating || "N/A" %></td>
+                                                <td><%= series.rating || "N/A" %></td>
+                                                <td><%= series.genre || "N/A" %></td>
+                                                <td><%= series.noofSeasons || "N/A" %></td>
+                                                <td><%= series.streamingPlatform || "N/A" %></td>
+                                            </tr>
+                                        <% }) %>
+                                    <% } %>
+                                </tbody>
+                            </table>
+                            
+                            <!-- Pagination Section -->
+                            <!-- Pagination Section -->
+<div class="pagination-container">
+    <% if (currentPage > 1) { %>
+        <a href="/webseries?page=1" class="pagination-btn">« First</a>
+        <a href="/webseries?page=<%= currentPage - 1 %>" class="pagination-btn">« Prev</a>
+    <% } %>
+
+    <% for (let i = 1; i <= totalPages; i++) { %>
+        <% if (i === 1 || i === totalPages || (i >= currentPage - 2 && i <= currentPage + 2)) { %>
+            <a href="/webseries?page=<%= i %>" 
+               class="pagination-btn <%= i === currentPage ? 'active' : '' %>">
+                <%= i %>
+            </a>
+        <% } else if (i === currentPage - 3 || i === currentPage + 3) { %>
+            <span class="pagination-dots">...</span>
+        <% } %>
+    <% } %>
+
+    <% if (currentPage < totalPages) { %>
+        <a href="/webseries?page=<%= currentPage + 1 %>" class="pagination-btn">Next »</a>
+        <a href="/webseries?page=<%= totalPages %>" class="pagination-btn">Last »</a>
+    <% } %>
+</div>
+<!-- End Pagination -->
+                            <!-- End Pagination -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
