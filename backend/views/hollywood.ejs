@@ -13,6 +13,18 @@
         </div>
         <!-- end main title -->
       </div>
+      
+      <!-- Search Bar -->
+      <div class="row mb-3">
+        <div class="col-12">
+          <div class="search-container">
+            <form action="/hollywood" method="GET">
+              <input type="text" name="search" placeholder="Search here..." value="<%= searchQuery %>" />
+              <button type="submit">Search</button>
+            </form>
+          </div>
+        </div>
+      </div>
 
       <div class="row">
         <!-- dashbox -->
@@ -27,51 +39,37 @@
                     <th>TITLE</th>
                     <th>RATING</th>
                     <th>GENRES</th>
+                    <th>CAST</th>
                     <th>RUNTIME</th>
-                    <th>ACTION</th>
                   </tr>
                 </thead>
                 <tbody class="text-white">
-                  <% movies.forEach((movie, hollywood) => { %>
-                  <tr>
-                    <td><%= (currentPage - 1) * 10 + hollywood + 1 %></td>
+                  <% englishMovies.forEach((movie, index) => { %>
+                  <tr class="movie-row">
+                    <td><%= (currentPage - 1) * 10 + index + 1 %></td> <!-- Fixed ID calculation -->
 
                     <!-- Movie Poster -->
                     <td>
-                      <img
-                        src="<%= movie.posterUrl || 'assets/img/default-poster.jpg' %>"
-                        alt="<%= movie.title %> Poster"
-                        width="70"
-                        onerror="this.onerror=null; this.src='assets/img/default-poster.jpg';"
-                      />
+                      <img src="<%= movie.posterUrl || 'assets/img/default-poster.jpg' %>"
+                           alt="<%= movie.title %> Poster"
+                           width="70"
+                           onerror="this.onerror=null; this.src='assets/img/default-poster.jpg';" />
                     </td>
 
                     <!-- Movie Title -->
-                    <td><%= movie.title || "N/A" %></td>
+                    <td class="movie-title"><%= movie.title || "N/A" %></td>
 
                     <!-- Movie Rating -->
-                    <td>
-                      <%= movie.rating ? movie.rating.toFixed(1) : "N/A" %>
-                    </td>
+                    <td class="movie-rating"><%= movie.rating ? movie.rating.toFixed(1) : "N/A" %></td>
 
                     <!-- Movie Genres -->
-                    <td><%= movie.genres || "N/A" %></td>
+                    <td class="movie-genre"><%= movie.genre || "N/A" %></td>
+
+                    <!-- Movie Cast -->
+                    <td><%= movie.cast || "N/A" %></td>
 
                     <!-- Movie Runtime -->
-                    <td>
-                      <%= movie.runtime ? movie.runtime + " min" : "N/A" %>
-                    </td>
-
-                    <!-- Watch Button -->
-                    <td>
-                      <% if (movie.watchLink && movie.watchLink !== "#") { %>
-                        <a href="<%= movie.watchLink %>" target="_blank" class="btn btn-primary">Watch</a>
-                      <% } else { %>
-                        <span class="text-white">Not Available</span>
-                      <% } %>
-                    </td>
-                    
-                    
+                    <td><%= movie.runtime ? movie.runtime + " min" : "N/A" %></td>
                   </tr>
                   <% }) %>
                 </tbody>
@@ -80,26 +78,25 @@
               <!-- Pagination Section -->
               <div class="pagination-container">
                 <% if (currentPage > 1) { %>
-                    <a href="/hollywood?page=1" class="pagination-btn">« First</a>
-                    <a href="/hollywood?page=<%= currentPage - 1 %>" class="pagination-btn">« Prev</a>
+                  <a href="/hollywood?page=1" class="pagination-btn">« First</a>
+                  <a href="/hollywood?page=<%= currentPage - 1 %>" class="pagination-btn">« Prev</a>
                 <% } %>
-            
+
                 <% for (let i = 1; i <= totalPages; i++) { %>
-                    <% if (i === 1 || i === totalPages || (i >= currentPage - 2 && i <= currentPage + 2)) { %>
-                        <a href="/hollywood?page=<%= i %>" 
-                           class="pagination-btn <%= i === currentPage ? 'active' : '' %>">
-                            <%= i %>
-                        </a>
-                    <% } else if (i === currentPage - 3 || i === currentPage + 3) { %>
-                        <span class="pagination-dots">...</span>
-                    <% } %>
+                  <% if (i === 1 || i === totalPages || (i >= currentPage - 2 && i <= currentPage + 2)) { %>
+                    <a href="/hollywood?page=<%= i %>" class="pagination-btn <%= i === currentPage ? 'active' : '' %>">
+                      <%= i %>
+                    </a>
+                  <% } else if (i === currentPage - 3 || i === currentPage + 3) { %>
+                    <span class="pagination-dots">...</span>
+                  <% } %>
                 <% } %>
-            
+
                 <% if (currentPage < totalPages) { %>
-                    <a href="/hollywood?page=<%= currentPage + 1 %>" class="pagination-btn">Next »</a>
-                    <a href="/hollywood?page=<%= totalPages %>" class="pagination-btn">Last »</a>
+                  <a href="/hollywood?page=<%= currentPage + 1 %>" class="pagination-btn">Next »</a>
+                  <a href="/hollywood?page=<%= totalPages %>" class="pagination-btn">Last »</a>
                 <% } %>
-            </div>
+              </div>
               <!-- End Pagination -->
             </div>
           </div>
@@ -107,25 +104,65 @@
       </div>
     </div>
   </main>
-</body>
 
 <script>
-  document.addEventListener("DOMContentLoaded", function () {
-    document.querySelectorAll(".watch-btn").forEach((button) => {
-      button.addEventListener("click", function () {
-        const movieId = this.getAttribute("data-movie-id");
+  function showSuggestions() {
+    let searchValue = document.getElementById("searchInput").value.toLowerCase();
+    let suggestionsBox = document.getElementById("suggestions");
+    suggestionsBox.innerHTML = "";
 
-        if (!movieId) {
-          alert("Movie ID not found!");
-          return;
-        }
+    if (searchValue.length < 2) {
+      suggestionsBox.style.display = "none";
+      return;
+    }
 
-        console.log("Opening IMDb for:", movieId); // Debugging log
+    let matchedMovies = [];
+    let rows = document.querySelectorAll(".movie-row");
 
-        // Redirect to IMDb movie page
-        const imdbUrl = `https://www.imdb.com/title/${movieId}`;
-        window.open(imdbUrl, "_blank");
-      });
+    rows.forEach(row => {
+      let title = row.querySelector(".movie-title").innerText.toLowerCase();
+      if (title.includes(searchValue)) {
+        matchedMovies.push(title);
+      }
     });
-  });
+
+    if (matchedMovies.length === 0) {
+      suggestionsBox.style.display = "none";
+    } else {
+      matchedMovies = [...new Set(matchedMovies)]; // Remove duplicates
+      matchedMovies.forEach(movie => {
+        let suggestionItem = document.createElement("div");
+        suggestionItem.innerText = movie;
+        suggestionItem.onclick = function() {
+          document.getElementById("searchInput").value = movie;
+          suggestionsBox.style.display = "none";
+          filterMovies();
+        };
+        suggestionsBox.appendChild(suggestionItem);
+      });
+      suggestionsBox.style.display = "block";
+    }
+  }
+
+  function filterMovies() {
+    let searchValue = document.getElementById("searchInput").value.toLowerCase();
+    let rows = document.querySelectorAll(".movie-row");
+
+    rows.forEach(row => {
+      let title = row.querySelector(".movie-title").innerText.toLowerCase();
+      let genre = row.querySelector(".movie-genre").innerText.toLowerCase();
+      let rating = row.querySelector(".movie-rating").innerText.toLowerCase();
+
+      if (
+        title.includes(searchValue) ||
+        genre.includes(searchValue) ||
+        rating.includes(searchValue)
+      ) {
+        row.style.display = "";
+      } else {
+        row.style.display = "none";
+      }
+    });
+  }
 </script>
+</body>

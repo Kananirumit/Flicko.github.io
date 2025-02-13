@@ -2,7 +2,11 @@ const User = require("../models/userModel");
 const Watchlist = require("../models/watchListModel");
 const Rating = require("../models/ratingsModel");
 const bcrypt = require("bcrypt");
-const session = require("express-session"); // Ensure session is used
+
+
+
+
+
 
 // ✅ Get User List
 const getUserList = async (req, res) => {

@@ -1,0 +1,829 @@
+title,rating,posterUrl,genre,cast,runtime
+War Room,6.5,,Drama,Priscilla C. Shirer,120
+Dragon Blade,6,,Action,Jackie Chan,127
+45 Years,7.1,,Drama,Charlotte Rampling,91
+Mother's Day,5.7,,Comedy,Jennifer Aniston,118
+Suicide Squad,5.9,,Action,Will Smith,123
+The Magnificent Seven,6.9,,Action,Denzel Washington,132
+Captain America: Civil War,7.8,,Action,Chris Evans,147
+Warcraft,6.8,,Action,Travis Fimmel,123
+Deadpool,8,,Action,Ryan Reynolds,108
+Doctor Strange,7.5,,Action,Benedict Cumberbatch,115
+Split,7.3,,Horror,James McAvoy,117
+Me Before You,7.4,,Drama,Emilia Clarke,106
+Don't Breathe,7.1,,Crime,Stephen Lang,88
+Lady Macbeth,6.8,,Drama,Florence Pugh,89
+Moana,7.6,,Animation,Auli'i Cravalho,107
+Arrival,7.9,,Drama,Amy Adams,116
+X-Men: Apocalypse,6.9,,Action,James McAvoy,144
+Captain Fantastic,7.9,,Comedy,Viggo Mortensen,118
+Star Trek Beyond,7,,Action,Chris Pine,122
+Sing,7.1,,Animation,Matthew McConaughey,108
+La La Land,8,,Comedy,Ryan Gosling,128
+The Conjuring 2,7.3,,Horror,Vera Farmiga,134
+Passengers,7,,Drama,Jennifer Lawrence,116
+Zootopia,8,,Animation,Ginnifer Goodwin,108
+The Huntsman: Winter's War,6.1,,Action,Chris Hemsworth,114
+Hacksaw Ridge,8.1,,Biography,Andrew Garfield,139
+The Handmaiden,8.1,,Drama,Kim Min-hee,145
+13 Hours,7.3,,Action,John Krasinski,144
+Nocturnal Animals,7.5,,Drama,Amy Adams,116
+Rogue One: A Star Wars Story,7.8,,Action,Felicity Jones,133
+Batman v Superman: Dawn of Justice,6.4,,Action,Ben Affleck,152
+Your Name.,8.4,,Animation,Ryûnosuke Kamiki,106
+Kung Fu Panda 3,7.1,,Animation,Jack Black,95
+The Nice Guys,7.4,,Action,Russell Crowe,116
+Independence Day: Resurgence,5.2,,Action,Liam Hemsworth,120
+Raw,7,,Drama,Garance Marillier,99
+Miss Peregrine's Home for Peculiar Children,6.7,,Adventure,Eva Green,127
+Fantastic Beasts and Where to Find Them,7.3,,Adventure,Eddie Redmayne,132
+Train to Busan,7.6,,Action,Gong Yoo,118
+Resident Evil: The Final Chapter,5.5,,Action,Milla Jovovich,107
+Criminal,6.3,,Action,Kevin Costner,113
+Underworld: Blood Wars,5.8,,Action,Kate Beckinsale,91
+The Shallows,6.3,,Action,Blake Lively,86
+Hidden Figures,7.8,,Biography,Taraji P. Henson,127
+Sausage Party,6.1,,Animation,Seth Rogen,89
+The Girl on the Train,6.5,,Crime,Emily Blunt,112
+Hell or High Water,7.6,,Action,Chris Pine,102
+The Purge: Election Year,6,,Action,Frank Grillo,108
+Ghostbusters,6.7,,Action,Melissa McCarthy,117
+The Accountant,7.3,,Action,Ben Affleck,128
+The Neon Demon,6.2,,Horror,Elle Fanning,117
+Moonlight,7.4,,Drama,Mahershala Ali,111
+Jason Bourne,6.6,,Action,Matt Damon,123
+Manchester by the Sea,7.8,,Drama,Casey Affleck,137
+Central Intelligence,6.3,,Action,Dwayne Johnson,107
+War Dogs,7.1,,Biography,Jonah Hill,114
+The Legend of Tarzan,6.2,,Action,Alexander Skarsgård,110
+Silence,7.2,,Drama,Andrew Garfield,161
+American Honey,7,,Adventure,Sasha Lane,163
+Gods of Egypt,5.4,,Action,Brenton Thwaites,127
+Hunt for the Wilderpeople,7.9,,Adventure,Sam Neill,101
+The Founder,7.2,,Biography,Michael Keaton,115
+Inferno,6.2,,Action,Tom Hanks,121
+Now You See Me 2,6.5,,Action,Jesse Eisenberg,129
+Miss Sloane,7.5,,Drama,Jessica Chastain,132
+The Jungle Book,7.4,,Adventure,Neel Sethi,106
+10 Cloverfield Lane,7.2,,Action,John Goodman,103
+The Lost City of Z,6.6,,Biography,Charlie Hunnam,141
+Finding Dory,7.3,,Animation,Ellen DeGeneres,97
+Lion,8,,Biography,Dev Patel,118
+Lights Out,6.3,,Drama,Teresa Palmer,81
+Meet the Blacks,4.8,,Comedy,Mike Epps,94
+Allied,7.1,,Action,Brad Pitt,124
+Jack Reacher: Never Go Back,6.1,,Action,Tom Cruise,118
+Bridget Jones's Baby,6.5,,Comedy,Renée Zellweger,123
+How to Be Single,6.1,,Comedy,Dakota Johnson,110
+Snowden,7.3,,Biography,Joseph Gordon-Levitt,134
+Dangal,8.4,,Action,Aamir Khan,161
+The Bad Batch,5.3,,Action,Suki Waterhouse,118
+Triple 9,6.3,,Action,Casey Affleck,115
+Deepwater Horizon,7.1,,Action,Mark Wahlberg,107
+The Choice,6.6,,Drama,Benjamin Walker,111
+Sully,7.4,,Biography,Tom Hanks,96
+Morgan,5.8,,Action,Kate Mara,92
+Pride and Prejudice and Zombies,5.8,,Action,Lily James,108
+The Infiltrator,7,,Biography,Bryan Cranston,127
+The Edge of Seventeen,7.3,,Comedy,Hailee Steinfeld,104
+A Cure for Wellness,6.4,,Drama,Dane DeHaan,146
+London Has Fallen,5.9,,Action,Gerard Butler,99
+Dirty Grandpa,5.9,,Comedy,Robert De Niro,102
+"Hail, Caesar!",6.3,,Comedy,Josh Brolin,106
+The 5th Wave,5.2,,Action,Chloë Grace Moretz,112
+Trolls,6.5,,Animation,Anna Kendrick,92
+Allegiant,5.7,,Action,Shailene Woodley,120
+Paterson,7.4,,Comedy,Adam Driver,118
+Swiss Army Man,7,,Comedy,Paul Dano,97
+The Great Wall,5.9,,Action,Matt Damon,103
+Mike and Dave Need Wedding Dates,6,,Comedy,Zac Efron,98
+Bad Moms,6.2,,Comedy,Mila Kunis,100
+Collateral Beauty,6.8,,Drama,Will Smith,97
+The Boy,6,,Horror,Lauren Cohan,97
+Fences,7.2,,Drama,Denzel Washington,139
+Alice Through the Looking Glass,6.2,,Adventure,Mia Wasikowska,113
+The Brothers Grimsby,6.2,,Action,Sacha Baron Cohen,83
+Ice Age: Collision Course,5.7,,Animation,Ray Romano,94
+Patriots Day,7.4,,Action,Mark Wahlberg,133
+Keeping Up with the Joneses,5.9,,Action,Zach Galifianakis,105
+Genius,6.6,,Biography,Colin Firth,104
+The Secret Life of Pets,6.5,,Animation,Louis C.K.,87
+Popstar: Never Stop Never Stopping,6.7,,Comedy,Andy Samberg,87
+Goldstone,6.5,,Crime,Aaron Pedersen,110
+20th Century Women,7.3,,Comedy,Annette Bening,119
+Assassin's Creed,5.7,,Action,Michael Fassbender,115
+Teenage Mutant Ninja Turtles: Out of the Shadows,6,,Action,Megan Fox,112
+White Girl,5.7,,Crime,Morgan Saylor,88
+Everybody Wants Some!!,6.9,,Comedy,Blake Jenner,117
+The Take,6.3,,Action,Idris Elba,92
+The Finest Hours,6.8,,Action,Chris Pine,117
+Greater,7.3,,Biography,Neal McDonough,130
+The Love Witch,6.2,,Comedy,Samantha Robinson,120
+The Belko Experiment,6.1,,Horror,John Gallagher Jr.,89
+The BFG,6.4,,Adventure,Mark Rylance,117
+Zoolander 2,4.7,,Action,Ben Stiller,101
+Midnight Special,6.6,,Drama,Michael Shannon,112
+The Angry Birds Movie,6.3,,Animation,Jason Sudeikis,97
+Live by Night,6.4,,Action,Ben Affleck,129
+Nerve,6.5,,Action,Emma Roberts,96
+Mechanic: Resurrection,5.7,,Action,Jason Statham,98
+Sing Street,7.9,,Comedy,Ferdia Walsh-Peelo,106
+The Light Between Oceans,7.2,,Drama,Michael Fassbender,133
+Shin Godzilla,6.8,,Action,Hiroki Hasegawa,120
+Why Him?,6.2,,Comedy,Zoey Deutch,111
+Miracles from Heaven,7.1,,Biography,Jennifer Garner,109
+Colossal,6.2,,Comedy,Anne Hathaway,109
+Free Fire,6.4,,Action,Sharlto Copley,91
+The Void,5.9,,Horror,Aaron Poole,90
+The Exception,6.8,,Drama,Lily James,107
+Neighbors 2: Sorority Rising,5.7,,Comedy,Seth Rogen,92
+Ben-Hur,5.7,,Action,Jack Huston,123
+Free State of Jones,6.9,,Action,Matthew McConaughey,139
+Jackie,6.7,,Biography,Natalie Portman,100
+Gold,6.7,,Crime,Matthew McConaughey,120
+Pete's Dragon,6.7,,Action,Bryce Dallas Howard,102
+31,5.1,,Horror,Malcolm McDowell,102
+Keanu,6.3,,Action,Keegan-Michael Key,100
+Goat,5.7,,Drama,Ben Schnetzer,96
+Storks,6.8,,Animation,Andy Samberg,87
+A Monster Calls,7.5,,Adventure,Lewis MacDougall,108
+Anthropoid,7.2,,Action,Jamie Dornan,120
+Kubo and the Two Strings,7.8,,Animation,Charlize Theron,101
+Café Society,6.6,,Comedy,Jesse Eisenberg,96
+Blair Witch,5,,Horror,James Allen McCune,89
+The Salesman,7.8,,Drama,Shahab Hosseini,124
+In a Valley of Violence,6,,Action,Ethan Hawke,104
+Ratchet & Clank,5.6,,Animation,James Arnold Taylor,94
+Risen,6.3,,Action,Joseph Fiennes,107
+Rules Don't Apply,5.7,,Comedy,Lily Collins,127
+Office Christmas Party,5.9,,Comedy,Jason Bateman,105
+Better Watch Out,6.5,,Comedy,Olivia DeJonge,89
+Florence Foster Jenkins,6.8,,Biography,Meryl Streep,111
+Batman: The Killing Joke,6.4,,Animation,Kevin Conroy,76
+Leap!,6.8,,Animation,Elle Fanning,89
+The Untamed,6.1,,Drama,Ruth Ramos,98
+A Hologram for the King,6.1,,Comedy,Tom Hanks,98
+Ouija: Origin of Evil,6.1,,Drama,Elizabeth Reaser,99
+All I See Is You,5.4,,Drama,Blake Lively,109
+The Forest,4.8,,Horror,Natalie Dormer,93
+Money Monster,6.5,,Crime,George Clooney,98
+Monster Trucks,5.7,,Animation,Lucas Till,104
+The Hollars,6.6,,Comedy,Sharlto Copley,88
+Fifty Shades of Black,3.5,,Comedy,Marlon Wayans,92
+Toni Erdmann,7.4,,Comedy,Sandra Hüller,162
+Their Finest,6.8,,Comedy,Gemma Arterton,117
+My Big Fat Greek Wedding 2,6,,Comedy,Nia Vardalos,94
+Billy Lynn's Long Halftime Walk,6.2,,Action,Joe Alwyn,113
+Personal Shopper,6.1,,Drama,Kristen Stewart,105
+Our Kind of Traitor,6.2,,Crime,Carlos Acosta,108
+Love & Friendship,6.4,,Comedy,Kate Beckinsale,90
+Bleed for This,6.8,,Biography,Miles Teller,117
+Whiskey Tango Foxtrot,6.6,,Biography,Tina Fey,112
+Loving,7,,Biography,Ruth Negga,123
+"I, Daniel Blake",7.9,,Drama,Dave Johns,100
+Sanam Teri Kasam,7.5,,Drama,Harshvardhan Rane,154
+Pet,5.7,,Horror,Dominic Monaghan,94
+Kingsglaive: Final Fantasy XV,6.8,,Animation,Aaron Paul,110
+Mr. Church,7.7,,Comedy,Eddie Murphy,104
+Hands of Stone,6.6,,Biography,Edgar Ramírez,111
+Ae Dil Hai Mushkil,5.8,,Drama,Ranbir Kapoor,158
+Denial,6.7,,Biography,Rachel Weisz,109
+Carrie Pilby,6.7,,Comedy,Bel Powley,98
+Ride Along 2,5.9,,Action,Ice Cube,102
+Pink,8.1,,Crime,Taapsee Pannu,136
+Under the Shadow,6.9,,Drama,Narges Rashidi,84
+Rock Dog,6,,Animation,Luke Wilson,90
+Race,7.1,,Biography,Stephan James,134
+A United Kingdom,6.9,,Biography,David Oyelowo,111
+Julieta,7.1,,Drama,Emma Suárez,99
+American Pastoral,6.1,,Crime,Ewan McGregor,108
+Buster's Mal Heart,6.2,,Crime,Rami Malek,96
+Complete Unknown,5.4,,Drama,Erin Darke,91
+This Beautiful Fantastic,6.9,,Comedy,Jessica Brown Findlay,92
+Incarnate,5.3,,Horror,Aaron Eckhart,87
+The Innocents,7.3,,Drama,Lou de Laâge,115
+Thor: Ragnarok,7.9,,Action,Chris Hemsworth,130
+Darkest Hour,7.4,,Biography,Gary Oldman,125
+The Hitman's Bodyguard,6.9,,Action,Ryan Reynolds,118
+It,7.3,,Horror,Bill Skarsgård,135
+Spider-Man: Homecoming,7.4,,Action,Tom Holland,133
+Blade Runner 2049,8,,Action,Harrison Ford,164
+Guardians of the Galaxy Vol. 2,7.6,,Action,Chris Pratt,136
+The Greatest Showman,7.6,,Biography,Hugh Jackman,105
+Jumanji: Welcome to the Jungle,6.9,,Action,Dwayne Johnson,119
+Baywatch,5.5,,Action,Dwayne Johnson,116
+Call Me by Your Name,7.9,,Drama,Armie Hammer,132
+Home Again,5.8,,Comedy,Reese Witherspoon,97
+The Fate of the Furious,6.6,,Action,Vin Diesel,136
+Get Out,7.7,,Horror,Daniel Kaluuya,104
+Dunkirk,7.8,,Action,Fionn Whitehead,106
+Coco,8.4,,Animation,Anthony Gonzalez,105
+Baby Driver,7.6,,Action,Ansel Elgort,113
+The Boss Baby,6.3,,Animation,Alec Baldwin,97
+Logan,8.1,,Action,Hugh Jackman,137
+Wonder Woman,7.4,,Action,Gal Gadot,141
+Alien: Covenant,6.4,,Horror,Michael Fassbender,122
+John Wick: Chapter 2,7.5,,Action,Keanu Reeves,122
+Wonder,8,,Drama,Jacob Tremblay,113
+Justice League,6.1,,Action,Ben Affleck,120
+Mother!,6.6,,Drama,Jennifer Lawrence,121
+Pirates of the Caribbean: Dead Men Tell No Tales,6.5,,Action,Johnny Depp,129
+The Shape of Water,7.3,,Adventure,Sally Hawkins,123
+Disobedience,6.6,,Drama,Rachel Weisz,114
+Kong: Skull Island,6.6,,Action,Tom Hiddleston,118
+Beauty and the Beast,7.1,,Family,Emma Watson,129
+Kingsman: The Golden Circle,6.7,,Action,Taron Egerton,141
+"Three Billboards Outside Ebbing, Missouri",8.1,,Comedy,Frances McDormand,115
+Star Wars: Episode VIII - The Last Jedi,7,,Action,Daisy Ridley,152
+Beast,6.8,,Crime,Jessie Buckley,107
+"I, Tonya",7.5,,Biography,Margot Robbie,119
+Atomic Blonde,6.7,,Action,Charlize Theron,115
+Wind River,7.7,,Crime,Elizabeth Olsen,107
+Murder on the Orient Express,6.5,,Crime,Kenneth Branagh,114
+King Arthur: Legend of the Sword,6.7,,Action,Charlie Hunnam,126
+Lady Bird,7.4,,Comedy,Saoirse Ronan,94
+The Killing of a Sacred Deer,7,,Drama,Barry G. Bernson,121
+Logan Lucky,7,,Comedy,Channing Tatum,118
+Fifty Shades Darker,4.6,,Drama,Dakota Johnson,118
+Happy Death Day,6.6,,Comedy,Jessica Rothe,96
+Transformers: The Last Knight,5.2,,Action,Mark Wahlberg,154
+Good Time,7.4,,Crime,Robert Pattinson,102
+Ghost in the Shell,6.3,,Action,Scarlett Johansson,107
+Hampstead,6,,Comedy,Lesley Manville,102
+Molly's Game,7.4,,Biography,Jessica Chastain,140
+Hostiles,7.2,,Drama,Scott Shepherd,134
+Valerian and the City of a Thousand Planets,6.5,,Action,Dane DeHaan,136
+The Dark Tower,5.6,,Action,Idris Elba,95
+Pitch Perfect 3,5.8,,Comedy,Anna Kendrick,93
+American Assassin,6.2,,Action,Dylan O'Brien,111
+You Were Never Really Here,6.8,,Crime,Joaquin Phoenix,89
+The Florida Project,7.6,,Drama,Brooklynn Prince,111
+Life,6.6,,Horror,Jake Gyllenhaal,104
+The Death of Stalin,7.2,,Comedy,Steve Buscemi,107
+Gifted,7.6,,Drama,Chris Evans,101
+Phantom Thread,7.5,,Drama,Vicky Krieps,130
+The Upside,7,,Comedy,Kevin Hart,126
+Berlin Syndrome,6.3,,Drama,Teresa Palmer,116
+Annabelle: Creation,6.5,,Horror,Anthony LaPaglia,109
+American Made,7.2,,Action,Tom Cruise,115
+War for the Planet of the Apes,7.4,,Action,Andy Serkis,140
+Geostorm,5.3,,Action,Gerard Butler,109
+The Circle,5.3,,Drama,Emma Watson,110
+Cars 3,6.7,,Animation,Owen Wilson,102
+Rough Night,5.2,,Comedy,Scarlett Johansson,101
+xXx: Return of Xander Cage,5.2,,Action,Vin Diesel,107
+The Mummy,5.4,,Action,Tom Cruise,110
+CHIPS,6,,Action,Michael Peña,100
+Ferdinand,6.7,,Animation,John Cena,108
+Only the Brave,7.6,,Action,Josh Brolin,134
+The Beguiled,6.3,,Drama,Nicole Kidman,93
+The Glass Castle,7.1,,Biography,Brie Larson,127
+The Lego Batman Movie,7.3,,Animation,Will Arnett,104
+Papillon,7.2,,Adventure,Charlie Hunnam,133
+The Big Sick,7.5,,Comedy,Kumail Nanjiani,120
+The Endless,6.5,,Drama,Aaron Moorhead,111
+Thoroughbreds,6.7,,Comedy,Olivia Cooke,92
+The Foreigner,7,,Action,Katie Leung,113
+Revenge,6.4,,Action,Matilda Anna Ingrid Lutz,108
+Jigsaw,5.8,,Crime,Matt Passmore,92
+The Snowman,5.1,,Crime,Michael Fassbender,119
+The Disaster Artist,7.4,,Biography,James Franco,104
+47 Meters Down,5.7,,Adventure,Mandy Moore,89
+The Post,7.2,,Drama,Meryl Streep,116
+"Everything, Everything",6.4,,Drama,Amandla Stenberg,96
+A Ghost Story,6.9,,Drama,Casey Affleck,92
+Sweet Virginia,6.2,,Action,Jon Bernthal,93
+Power Rangers,5.9,,Action,Dacre Montgomery,124
+Lucky,7.4,,Comedy,Harry Dean Stanton,88
+All the Money in the World,6.8,,Biography,Michelle Williams,132
+Suburbicon,5.7,,Comedy,Matt Damon,105
+The Wife,7.2,,Drama,Glenn Close,99
+It Comes at Night,6.2,,Horror,Joel Edgerton,91
+Despicable Me 3,6.3,,Animation,Steve Carell,89
+Going in Style,6.6,,Comedy,Michael Caine,96
+Downsizing,5.7,,Drama,Matt Damon,135
+Before I Fall,6.5,,Drama,Zoey Deutch,98
+Wonder Wheel,6.2,,Drama,Justin Timberlake,101
+The Emoji Movie,3.3,,Animation,T.J. Miller,86
+Ingrid Goes West,6.6,,Comedy,Aubrey Plaza,98
+Unforgettable,5.1,,Drama,Rosario Dawson,100
+Paddington 2,7.8,,Animation,Ben Whishaw,103
+Girls Trip,6.2,,Adventure,Regina Hall,122
+Loving Vincent,7.8,,Animation,Douglas Booth,94
+The Space Between Us,6.4,,Drama,Gary Oldman,120
+Double Lover,6.2,,Drama,Marine Vacth,107
+The Mountain Between Us,6.4,,Action,Kate Winslet,112
+T2 Trainspotting,7.2,,Drama,Ewan McGregor,117
+The Square,7.2,,Comedy,Claes Bang,151
+The Hero,6.5,,Drama,Sam Elliott,96
+Battle of the Sexes,6.7,,Biography,Emma Stone,121
+God's Own Country,7.7,,Drama,Josh O'Connor,104
+The Book of Henry,6.6,,Crime,Naomi Watts,105
+Borg vs. McEnroe,6.9,,Biography,Sverrir Gudnason,107
+Daddy's Home 2,6,,Comedy,Will Ferrell,100
+Mark Felt: The Man Who Brought Down the White House,6.4,,Biography,Liam Neeson,103
+A Dog's Purpose,7.2,,Adventure,Josh Gad,100
+Columbus,7.2,,Drama,John Cho,100
+The Little Hours,5.8,,Comedy,Alison Brie,90
+The Shack,6.3,,Drama,Sam Worthington,132
+Thelma,7,,Drama,Eili Harboe,116
+Flatliners,5.2,,Drama,Elliot Page,109
+Rings,4.5,,Drama,Matilda Anna Ingrid Lutz,102
+I Do... Until I Don't,4.1,,Comedy,Lake Bell,106
+Professor Marston & the Wonder Women,7.1,,Biography,Luke Evans,108
+The Rider,7.5,,Drama,Brady Jandreau,104
+First Reformed,7.1,,Drama,Ethan Hawke,113
+The Lego Ninjago Movie,6,,Animation,Jackie Chan,101
+My Friend Dahmer,6.2,,Biography,Ross Lynch,107
+The House,5.6,,Comedy,Will Ferrell,88
+Marrowbone,6.7,,Drama,George MacKay,110
+The Zookeeper's Wife,7,,Biography,Jessica Chastain,127
+Flower,6,,Comedy,Zoey Deutch,90
+Song to Song,5.7,,Drama,Ryan Gosling,129
+Detroit,7.3,,Crime,John Boyega,143
+Last Flag Flying,6.9,,Comedy,Bryan Cranston,125
+Megan Leavey,7.1,,Biography,Kate Mara,116
+All Eyez on Me,5.9,,Biography,Demetrius Shipp Jr.,139
+Sleepless,5.6,,Action,Jamie Foxx,95
+The Captain,7.4,,Drama,Max Hubacher,118
+Tulip Fever,6.2,,Drama,Alicia Vikander,105
+Stronger,6.9,,Biography,Jake Gyllenhaal,119
+Jeepers Creepers III,3.9,,Horror,Stan Shaw,100
+My Cousin Rachel,6,,Drama,Rachel Weisz,106
+Baahubali 2: The Conclusion,8.2,,Action,Prabhas,167
+Breathe,7.2,,Biography,Andrew Garfield,118
+The Only Living Boy in New York,6.3,,Drama,Callum Turner,89
+A Taxi Driver,7.9,,Action,Kang-ho Song,137
+Brad's Status,6.5,,Comedy,Ben Stiller,102
+American Satan,5.7,,Drama,Andy Biersack,111
+Smurfs: The Lost Village,6,,Animation,Demi Lovato,90
+Gook,7,,Drama,Simone Baker,94
+Wonderstruck,6.2,,Adventure,Oakes Fegley,116
+In the Fade,7.1,,Crime,Numan Acar,106
+Snatched,4.5,,Action,Amy Schumer,90
+"Roman J. Israel, Esq.",6.5,,Crime,Denzel Washington,122
+Victoria & Abdul,6.8,,Biography,Judi Dench,111
+Fist Fight,5.6,,Comedy,Ice Cube,91
+The Wall,6.2,,Action,Aaron Taylor-Johnson,88
+How to Be a Latin Lover,6,,Comedy,Eugenio Derbez,115
+The Leisure Seeker,6.7,,Adventure,Helen Mirren,112
+Same Kind of Different as Me,6.6,,Biography,Greg Kinnear,119
+My Little Pony: The Movie,6.1,,Animation,Emily Blunt,99
+Goodbye Christopher Robin,7.1,,Biography,Domhnall Gleeson,107
+Table 19,5.8,,Comedy,Anna Kendrick,87
+Father Figures,5.5,,Comedy,Owen Wilson,113
+Kidnap,5.9,,Action,Halle Berry,95
+Diary of a Wimpy Kid: The Long Haul,4.3,,Animation,Jason Drucker,91
+Ghost Stories,6.4,,Drama,Samuel Bottomley,98
+Churchill,6.1,,Biography,Brian Cox,105
+Beach Rats,6.4,,Drama,Harris Dickinson,98
+The Bookshop,6.5,,Drama,Emily Mortimer,113
+Mary Shelley,6.5,,Biography,Elle Fanning,120
+A Bad Moms Christmas,5.6,,Comedy,Mila Kunis,104
+Loveless,7.6,,Drama,Maryana Spivak,127
+Captain Underpants: The First Epic Movie,6.2,,Animation,Kevin Hart,89
+Beatriz at Dinner,6,,Comedy,Salma Hayek,82
+Wish Upon,5,,Drama,Joey King,90
+Super Dark Times,6.6,,Crime,Owen Campbell,103
+Blade of the Immortal,6.8,,Action,Takuya Kimura,140
+Journey's End,6.7,,Drama,Paul Bettany,107
+Godard Mon Amour,6.6,,Biography,Louis Garrel,107
+Marshall,7.3,,Biography,Chadwick Boseman,118
+BPM (Beats Per Minute),7.4,,Drama,Nahuel Pérez Biscayart,143
+Lean on Pete,7.2,,Adventure,Charlie Plummer,121
+Memoir of a Murderer,7.2,,Action,Sol Kyung-gu,118
+Take Me,6.1,,Comedy,Pat Healy,83
+The Last Movie Star,7,,Drama,Burt Reynolds,94
+On Chesil Beach,6.3,,Drama,Billy Howle,110
+Breath,6.7,,Adventure,Samson Coulter,115
+The Villainess,6.7,,Action,Kim Ok-bin,124
+How to Talk to Girls at Parties,5.7,,Comedy,Elle Fanning,102
+Amityville: The Awakening,4.8,,Horror,Jennifer Jason Leigh,87
+The Resurrection of Gavin Stone,6.3,,Comedy,Brett Dalton,91
+The Bye Bye Man,4.2,,Drama,Douglas Smith,96
+Along With the Gods: The Two Worlds,7.3,,Action,Ha Jung-woo,139
+A Quiet Place,7.5,,Drama,Emily Blunt,90
+Avengers: Infinity War,8.4,,Action,Robert Downey Jr.,149
+Deadpool 2,7.7,,Action,Ryan Reynolds,119
+Bohemian Rhapsody,7.9,,Biography,Rami Malek,134
+Black Panther,7.3,,Action,Chadwick Boseman,134
+Hereditary,7.3,,Drama,Toni Collette,127
+A Simple Favor,6.8,,Comedy,Anna Kendrick,117
+Aquaman,6.9,,Action,Jason Momoa,143
+Ready Player One,7.4,,Action,Tye Sheridan,140
+Spider-Man: Into the Spider-Verse,8.4,,Animation,Shameik Moore,117
+Mission: Impossible - Fallout,7.7,,Action,Tom Cruise,147
+Venom,6.7,,Action,Tom Hardy,112
+Green Book,8.2,,Biography,Viggo Mortensen,130
+Crazy Rich Asians,6.9,,Comedy,Constance Wu,120
+Ant-Man and the Wasp,7,,Action,Paul Rudd,118
+BlacKkKlansman,7.5,,Biography,John David Washington,135
+The Predator,5.3,,Action,Boyd Holbrook,107
+White Boy Rick,6.5,,Crime,Matthew McConaughey,111
+Solo: A Star Wars Story,6.9,,Action,Alden Ehrenreich,135
+Midnight Sun,6.6,,Drama,Bella Thorne,91
+Under the Silver Lake,6.5,,Crime,Andrew Garfield,139
+Den of Thieves,7,,Action,Gerard Butler,140
+Annihilation,6.8,,Adventure,Natalie Portman,115
+Red Sparrow,6.6,,Action,Jennifer Lawrence,140
+A Star Is Born,7.6,,Drama,Lady Gaga,136
+Mamma Mia! Here We Go Again,6.6,,Comedy,Lily James,114
+Death Wish,6.3,,Action,Bruce Willis,107
+Instant Family,7.3,,Comedy,Mark Wahlberg,118
+Jurassic World: Fallen Kingdom,6.2,,Action,Chris Pratt,128
+Eighth Grade,7.4,,Comedy,Elsie Fisher,93
+Ocean's Eight,6.3,,Action,Sandra Bullock,110
+Suspiria,6.7,,Fantasy,Chloë Grace Moretz,152
+The Favourite,7.5,,Biography,Olivia Colman,119
+The Meg,5.6,,Action,Jason Statham,113
+Mandy,6.5,,Horror,Nicolas Cage,121
+Sicario: Day of the Soldado,7.1,,Action,Benicio Del Toro,122
+Fifty Shades Freed,4.5,,Drama,Dakota Johnson,105
+Halloween,6.5,,Crime,Jamie Lee Curtis,106
+Incredibles 2,7.6,,Animation,Craig T. Nelson,118
+The First Purge,5.2,,Action,Y'lan Noel,97
+The House That Jack Built,6.8,,Crime,Matt Dillon,152
+Ophelia,6.6,,Drama,Daisy Ridley,106
+The Nun,5.3,,Horror,Demián Bichir,96
+Charlie Says,5.9,,Biography,Hannah Murray,110
+The Equalizer 2,6.7,,Action,Denzel Washington,121
+Climax,7,,Drama,Sofia Boutella,97
+The Commuter,6.3,,Action,Liam Neeson,104
+Game Night,6.9,,Action,Jason Bateman,100
+Red Joan,6.4,,Biography,Judi Dench,101
+Tag,6.5,,Action,Jeremy Renner,100
+The Hate U Give,7.5,,Crime,Amandla Stenberg,133
+Bad Times at the El Royale,7.1,,Crime,Jeff Bridges,141
+Isle of Dogs,7.9,,Animation,Bryan Cranston,101
+Fantastic Beasts: The Crimes of Grindelwald,6.5,,Adventure,Eddie Redmayne,134
+Hunter Killer,6.6,,Action,Gerard Butler,121
+The Mule,7,,Crime,Clint Eastwood,116
+The Clovehitch Killer,6.6,,Crime,Dylan McDermott,109
+Robin Hood,5.3,,Action,Taron Egerton,116
+Beautiful Boy,7.3,,Biography,Steve Carell,120
+Capharnaüm,8.4,,Drama,Zain Al Rafeea,126
+Adrift,6.6,,Action,Shailene Woodley,96
+"Love, Simon",7.6,,Comedy,Nick Robinson,110
+Mary Poppins Returns,6.7,,Comedy,Emily Blunt,130
+Leave No Trace,7.2,,Adventure,Thomasin McKenzie,109
+Bumblebee,6.7,,Action,Hailee Steinfeld,114
+Vice,7.2,,Biography,Christian Bale,132
+Hotel Transylvania 3: Summer Vacation,6.3,,Animation,Adam Sandler,97
+Mile 22,6.1,,Action,Mark Wahlberg,94
+Peter Rabbit,6.6,,Animation,James Corden,95
+12 Strong,6.6,,Action,Chris Hemsworth,130
+The Spy Who Dumped Me,6.1,,Action,Justin Theroux,117
+Upgrade,7.5,,Action,Logan Marshall-Green,100
+Mary Queen of Scots,6.3,,Biography,Saoirse Ronan,124
+Ralph Breaks the Internet,7,,Animation,John C. Reilly,112
+Overlord,6.6,,Action,Jovan Adepo,110
+Tomb Raider,6.3,,Action,Alicia Vikander,119
+The Girl in the Spider's Web,6.1,,Action,Claire Foy,115
+Mortal Engines,6.1,,Action,Hera Hilmar,128
+Maze Runner: The Death Cure,6.3,,Action,Dylan O'Brien,143
+First Man,7.3,,Biography,Ryan Gosling,141
+Creed II,7.1,,Drama,Michael B. Jordan,130
+Rampage,6.1,,Action,Dwayne Johnson,107
+Everybody Knows,6.9,,Crime,Penélope Cruz,133
+Mid90s,7.4,,Comedy,Sunny Suljic,85
+Replicas,5.5,,Drama,Keanu Reeves,107
+Widows,6.9,,Crime,Viola Davis,129
+Burning,7.5,,Drama,Yoo Ah-in,148
+Searching,7.6,,Drama,John Cho,102
+Life Itself,6.9,,Drama,Oscar Isaac,117
+Blockers,6.2,,Comedy,Leslie Mann,102
+The Strangers: Prey at Night,5.2,,Horror,Christina Hendricks,85
+Peppermint,6.5,,Action,Jennifer Garner,101
+High Life,5.8,,Adventure,Robert Pattinson,113
+Every Day,6.5,,Drama,Angourie Rice,97
+Operation Finale,6.6,,Biography,Oscar Isaac,122
+Shoplifters,7.9,,Crime,Lily Franky,121
+Blindspotting,7.4,,Comedy,Daveed Diggs,95
+The Sisters Brothers,7,,Crime,John C. Reilly,122
+The Nightingale,7.3,,Adventure,Aisling Franciosi,136
+Greta,6,,Drama,Isabelle Huppert,98
+I Feel Pretty,5.5,,Comedy,Amy Schumer,110
+Hotel Artemis,6.1,,Action,Jodie Foster,94
+Slender Man,3.2,,Horror,Joey King,93
+Trial by Fire,7,,Biography,Jack O'Connell,127
+American Woman,6.8,,Drama,Sienna Miller,111
+Book Club,6.1,,Comedy,Diane Keaton,104
+Slaughterhouse Rulez,5.3,,Action,Jassa Ahluwalia,104
+Sorry to Bother You,6.9,,Comedy,LaKeith Stanfield,112
+Pacific Rim: Uprising,5.6,,Action,John Boyega,111
+Holmes & Watson,3.8,,Comedy,Will Ferrell,90
+The Darkest Minds,5.7,,Action,Amandla Stenberg,104
+Cold War,7.6,,Drama,Joanna Kulig,89
+Truth or Dare,5.2,,Horror,Lucy Hale,100
+Alpha,6.7,,Action,Kodi Smit-McPhee,96
+At Eternity's Gate,6.9,,Biography,Willem Dafoe,111
+Overboard,6,,Comedy,Eugenio Derbez,112
+Summer of 84,6.7,,Drama,Graham Verchere,105
+Arctic,6.8,,Adventure,Mads Mikkelsen,98
+A Wrinkle in Time,4.2,,Adventure,Storm Reid,109
+London Fields,4,,Crime,Amber Heard,118
+Andhadhun,8.2,,Crime,Ayushmann Khurrana,139
+Hotel Mumbai,7.6,,Action,Dev Patel,123
+Life of the Party,5.6,,Comedy,Melissa McCarthy,105
+American Animals,7,,Biography,Spencer Reinhard,116
+The House with a Clock in Its Walls,6.1,,Comedy,Jack Black,105
+Brian Banks,7.2,,Biography,Aldis Hodge,99
+Gotti,4.7,,Biography,John Travolta,112
+Christopher Robin,7.3,,Adventure,Ewan McGregor,104
+Destroyer,6.2,,Action,Nicole Kidman,121
+We Have Always Lived in the Castle,5.6,,Drama,Taissa Farmiga,90
+The Miseducation of Cameron Post,6.6,,Drama,Chloë Grace Moretz,91
+Insidious: The Last Key,5.7,,Horror,Lin Shaye,103
+Mary Magdalene,5.9,,Biography,Rooney Mara,120
+"Don't Worry, He Won't Get Far on Foot",6.9,,Biography,Joaquin Phoenix,114
+Can You Ever Forgive Me?,7.1,,Biography,Melissa McCarthy,106
+Unsane,6.4,,Drama,Claire Foy,98
+Boy Erased,6.9,,Biography,Lucas Hedges,115
+Johnny English Strikes Again,6.2,,Action,Rowan Atkinson,89
+Skyscraper,5.8,,Action,Dwayne Johnson,102
+Wildlife,6.8,,Drama,Ed Oxenbould,105
+The Old Man & the Gun,6.7,,Biography,Robert Redford,93
+Forever My Girl,6.7,,Comedy,Alex Roe,108
+On the Basis of Sex,7.1,,Biography,Felicity Jones,120
+I Want to Eat Your Pancreas,8,,Animation,Mahiro Takasugi,109
+The Man Who Killed Don Quixote,6.4,,Adventure,José Luis Ferrer,132
+The Catcher Was a Spy,6.2,,Biography,Paul Rudd,94
+Welcome to Marwen,6.2,,Biography,Steve Carell,116
+Bad Samaritan,6.5,,Crime,David Tennant,110
+Border,7,,Crime,Eva Melander,110
+Gringo,6.1,,Action,Joel Edgerton,111
+Assassination Nation,6,,Action,Odessa Young,108
+Unfriended: Dark Web,6,,Horror,Colin Woodell,92
+The Nutcracker and the Four Realms,5.6,,Adventure,Mackenzie Foy,99
+Little Italy,5.7,,Comedy,Emma Roberts,102
+The Happytime Murders,5.4,,Action,Melissa McCarthy,91
+Tully,7,,Comedy,Charlize Theron,95
+Night School,5.6,,Comedy,Kevin Hart,111
+Lords of Chaos,6.6,,Biography,Rory Culkin,118
+Smallfoot,6.6,,Animation,Channing Tatum,96
+Hell Fest,5.5,,Horror,Cynthea Mercado,89
+A Private War,6.7,,Biography,Rosamund Pike,110
+Second Act,5.8,,Comedy,Jennifer Lopez,103
+Uncle Drew,5.8,,Comedy,Kyrie Irving,103
+Wild Rose,7.2,,Comedy,Jessie Buckley,101
+The Possession of Hannah Grace,5.2,,Horror,Shay Mitchell,86
+If Beale Street Could Talk,7.1,,Drama,KiKi Layne,119
+Out of Blue,4.8,,Crime,Mamie Gummer,109
+The Grinch,6.3,,Animation,Benedict Cumberbatch,85
+Colette,6.7,,Biography,Keira Knightley,111
+Winchester,5.5,,Biography,Helen Mirren,99
+The 15:17 to Paris,5.3,,Biography,Alek Skarlatos,94
+Action Point,5.1,,Comedy,Johnny Knoxville,85
+"Juliet, Naked",6.6,,Comedy,Chris O'Dowd,97
+The Guilty,7.5,,Crime,Jakob Cedergren,85
+Never Look Away,7.7,,Biography,Tom Schilling,189
+Vox Lux,5.8,,Drama,Natalie Portman,114
+The Wind,5.6,,Horror,Caitlin Gerard,88
+Super Troopers 2,6.1,,Comedy,Jay Chandrasekhar,99
+Summer '03,5.5,,Comedy,Joey King,95
+An Acceptable Loss,5.4,,Drama,Tika Sumpter,102
+The Death & Life of John F. Donovan,6.2,,Drama,Kit Harington,123
+Duck Butter,5.3,,Comedy,Alia Shawkat,93
+The Little Mermaid,4.3,,Adventure,William Moseley,85
+Padmaavat,7,,Drama,Deepika Padukone,164
+Stan & Ollie,7.2,,Biography,Steve Coogan,98
+SuperFly,5.2,,Action,Trevor Jackson,116
+Early Man,6.1,,Animation,Eddie Redmayne,89
+I Can Only Imagine,7.3,,Biography,J. Michael Finley,110
+The Hummingbird Project,6.2,,Drama,Jesse Eisenberg,111
+Dragon Ball Super: Broly,7.8,,Animation,Masako Nozawa,100
+Gloria Bell,6.3,,Comedy,Julianne Moore,102
+Kin,5.8,,Action,Myles Truitt,102
+Aniara,6.3,,Drama,Emelie Garbers,106
+Becoming Astrid,7.1,,Biography,Alba August,123
+Goosebumps 2: Haunted Halloween,5.6,,Animation,Wendi McLendon-Covey,90
+The Quake,6.2,,Action,Kristoffer Joner,106
+Nobody's Fool,4.9,,Comedy,Tiffany Haddish,110
+7 Days in Entebbe,5.8,,Action,Batsheva Dance Company,107
+My Hero Academia: Two Heroes,7.5,,Animation,Daiki Yamashita,96
+An Interview with God,5.8,,Drama,David Strathairn,97
+Midsommar,7.1,,Drama,Florence Pugh,148
+Once Upon a Time... In Hollywood,7.6,,Comedy,Leonardo DiCaprio,161
+Avengers: Endgame,8.4,,Action,Robert Downey Jr.,181
+Fighting with My Family,7.1,,Biography,Dwayne Johnson,108
+Little Women,7.8,,Drama,Saoirse Ronan,135
+Escape Room,6.4,,Action,Taylor Russell,99
+The Dead Don't Die,5.5,,Comedy,Bill Murray,104
+Joker,8.4,,Crime,Joaquin Phoenix,122
+Yesterday,6.8,,Comedy,Himesh Patel,116
+Parasite,8.6,,Comedy,Kang-ho Song,132
+John Wick: Chapter 3 - Parabellum,7.4,,Action,Keanu Reeves,130
+Knives Out,7.9,,Comedy,Daniel Craig,130
+Fast & Furious Presents: Hobbs & Shaw,6.4,,Action,Dwayne Johnson,137
+Captain Marvel,6.8,,Action,Brie Larson,123
+After,5.3,,Drama,Josephine Langford,105
+Spider-Man: Far from Home,7.5,,Action,Tom Holland,129
+Jojo Rabbit,7.9,,Comedy,Roman Griffin Davis,108
+Shazam!,7,,Action,Zachary Levi,132
+It Chapter Two,6.5,,Drama,Jessica Chastain,169
+1917,8.3,,Drama,Dean-Charles Chapman,119
+Star Wars: Episode IX - The Rise of Skywalker,6.5,,Action,Daisy Ridley,141
+Ford v Ferrari,8.1,,Action,Matt Damon,152
+The Irishman,7.8,,Biography,Robert De Niro,209
+The Lighthouse,7.5,,Drama,Robert Pattinson,109
+Jumanji: The Next Level,6.6,,Action,Dwayne Johnson,123
+Alita: Battle Angel,7.3,,Action,Rosa Salazar,122
+Us,6.8,,Horror,Lupita Nyong'o,116
+Ready or Not,6.9,,Action,Samara Weaving,95
+Hellboy,5.2,,Action,David Harbour,120
+Terminator: Dark Fate,6.2,,Action,Linda Hamilton,128
+Downton Abbey,7.4,,Drama,Stephen Campbell Moore,122
+Gemini Man,5.7,,Action,Will Smith,117
+Booksmart,7.2,,Comedy,Kaitlyn Dever,102
+Dora and the Lost City of Gold,6.1,,Adventure,Isabela Merced,102
+Glass,6.6,,Drama,James McAvoy,129
+The Best of Enemies,7.2,,Biography,Taraji P. Henson,133
+Official Secrets,7.3,,Biography,Keira Knightley,112
+The Lion King,6.9,,Animation,Donald Glover,118
+Aladdin,6.9,,Adventure,Will Smith,128
+Marriage Story,7.9,,Comedy,Adam Driver,137
+Godzilla: King of the Monsters,6,,Action,Kyle Chandler,132
+Rocketman,7.3,,Biography,Taron Egerton,121
+Hustlers,6.3,,Comedy,Constance Wu,110
+Anna,6.6,,Action,Sasha Luss,118
+Portrait of a Lady on Fire,8.1,,Drama,Noémie Merlant,122
+Toy Story 4,7.7,,Animation,Tom Hanks,100
+Zombieland: Double Tap,6.7,,Action,Woody Harrelson,99
+Long Shot,6.8,,Comedy,Charlize Theron,125
+Angel Has Fallen,6.4,,Action,Gerard Butler,121
+Men in Black: International,5.6,,Action,Chris Hemsworth,114
+X-Men: Dark Phoenix,5.7,,Action,James McAvoy,113
+Frozen II,6.8,,Animation,Kristen Bell,103
+Brightburn,6.1,,Drama,Elizabeth Banks,90
+Ad Astra,6.5,,Adventure,Brad Pitt,123
+The Peanut Butter Falcon,7.6,,Adventure,Zack Gottsagen,97
+Good Boys,6.7,,Adventure,Jacob Tremblay,90
+Ma,5.6,,Horror,Octavia Spencer,99
+Five Feet Apart,7.2,,Drama,Haley Lu Richardson,116
+Cold Pursuit,6.2,,Action,Liam Neeson,119
+Crawl,6.1,,Action,Kaya Scodelario,87
+Annabelle Comes Home,5.9,,Horror,Vera Farmiga,106
+Rambo: Last Blood,6.1,,Action,Sylvester Stallone,89
+Late Night,6.5,,Comedy,Emma Thompson,102
+The Addams Family,5.8,,Animation,Oscar Isaac,86
+The Goldfinch,6.3,,Drama,Oakes Fegley,149
+A Beautiful Day in the Neighborhood,7.3,,Biography,Tom Hanks,109
+How to Train Your Dragon: The Hidden World,7.5,,Animation,Jay Baruchel,104
+Pokémon Detective Pikachu,6.6,,Action,Ryan Reynolds,104
+Serenity,5.4,,Drama,Matthew McConaughey,106
+Maleficent: Mistress of Evil,6.6,,Adventure,Angelina Jolie,119
+The Last Black Man in San Francisco,7.3,,Drama,Jimmie Fails,121
+The Secret Life of Pets 2,6.5,,Animation,Patton Oswalt,86
+The Curse of la Llorona,5.3,,Horror,Linda Cardellini,93
+Captive State,6,,Action,John Goodman,109
+Scary Stories to Tell in the Dark,6.2,,Adventure,Zoe Margaret Colletti,108
+The Intruder,5.6,,Thriller,Michael Ealy,102
+The Angry Birds Movie 2,6.4,,Animation,Jason Sudeikis,97
+What Men Want,5.3,,Comedy,Taraji P. Henson,117
+Pet Sematary,5.7,,Horror,Jason Clarke,101
+47 Meters Down: Uncaged,5,,Adventure,Sophie Nélisse,90
+The Art of Self-Defense,6.6,,Action,Jesse Eisenberg,104
+Happy Death Day 2U,6.2,,Comedy,Jessica Rothe,100
+Weathering with You,7.5,,Animation,Kotaro Daigo,112
+The Kid,5.9,,Biography,Jake Schur,100
+Sword of Trust,6.3,,Comedy,Marc Maron,88
+The Lego Movie 2: The Second Part,6.6,,Animation,Chris Pratt,107
+Child's Play,5.8,,Drama,Tim Matheson,90
+Luce,6.7,,Drama,Naomi Watts,109
+The Souvenir,6.4,,Drama,Neil Young,120
+The Farewell,7.6,,Comedy,Shuzhen Zhao,100
+Dumbo,6.3,,Adventure,Colin Farrell,112
+The Hustle,5.4,,Comedy,Anne Hathaway,93
+Ode to Joy,6.4,,Comedy,Martin Freeman,97
+Shaft,6.4,,Action,Samuel L. Jackson,111
+The Beach Bum,5.5,,Comedy,Matthew McConaughey,95
+The Kitchen,5.5,,Action,Melissa McCarthy,102
+Can You Keep a Secret?,5.3,,Comedy,Alexandra Daddario,94
+Stuber,6.2,,Action,Dave Bautista,93
+The Art of Racing in the Rain,7.6,,Comedy,Kevin Costner,109
+Blinded by the Light,6.9,,Comedy,Billy Barratt,118
+"Where'd You Go, Bernadette",6.5,,Comedy,Cate Blanchett,109
+Ip Man 4: The Finale,7,,Action,Donnie Yen,107
+Abominable,7,,Animation,Chloe Bennet,97
+The Aftermath,6.3,,Drama,Keira Knightley,108
+Isn't It Romantic,5.9,,Comedy,Rebel Wilson,89
+Killerman,5.4,,Action,Liam Hemsworth,112
+A Dog's Journey,7.5,,Adventure,Josh Gad,109
+Don't Let Go,6.4,,Drama,David Oyelowo,103
+UglyDolls,5,,Animation,Kelly Clarkson,87
+Tolkien,6.8,,Biography,Nicholas Hoult,112
+The Hole in the Ground,5.7,,Drama,Seána Kerslake,90
+Brittany Runs a Marathon,6.8,,Comedy,Jillian Bell,104
+Chhichhore,8.3,,Comedy,Sushant Singh Rajput,143
+After the Wedding,6.3,,Drama,Julianne Moore,112
+Miss Bala,5.8,,Action,Gina Rodriguez,104
+A Dog's Way Home,6.7,,Adventure,Ashley Judd,96
+Super 30,8,,Biography,Hrithik Roshan,154
+Wonder Park,5.9,,Animation,Sofia Mali,85
+"The Gangster, the Cop, the Devil",6.9,,Action,Ma Dong-seok,109
+The Fanatic,4.1,,Crime,John Travolta,88
+The Mustang,6.9,,Drama,Matthias Schoenaerts,96
+Triple Threat,5.6,,Action,Tony Jaa,96
+The Wandering Earth,6,,Action,Jing Wu,125
+The Kid Who Would Be King,6,,Action,Louis Ashbourne Serkis,120
+Sunrise in Heaven,6,,Drama,Caylee Cowan,85
+Missing Link,6.7,,Animation,Hugh Jackman,93
+Breakthrough,6.3,,Biography,Marcel Ruiz,116
+Poms,6,,Comedy,Diane Keaton,90
+Little,5.5,,Comedy,Regina Hall,109
+The Prodigy,5.9,,Fantasy,Taylor Schilling,92
+Ne Zha,7.5,,Animation,Yanting Lü,110
+Storm Boy,6.9,,Drama,Finn Little,99
+Gully Boy,8,,Drama,Vijay Varma,154
+Crypto,5.3,,Crime,Beau Knapp,105
+Overcomer,6.6,,Drama,Alex Kendrick,119
+Ms. Purple,6.2,,Crime,Jake Choi,87
+A Madea Family Funeral,4.5,,Comedy,Tyler Perry,109
+Run with the Hunted,5.2,,Crime,Ron Perlman,93
+Extreme Job,7.1,,Action,Lee Dong-yong,111
+The Tomorrow Man,5.7,,Drama,John Lithgow,94
+The Sun Is also a Star,5.9,,Drama,Yara Shahidi,100
+"Faith, Hope & Love",6.2,,Comedy,Peta Murgatroyd,106
+Kalank,3.6,,Drama,Varun Dhawan,166
+Sonchiriya,8.1,,Action,Sushant Singh Rajput,143
+Mission Mangal,6.5,,Drama,Akshay Kumar,130
+K-12,6.5,,Fantasy,Melanie Martinez,96
+Batla House,7.2,,Action,Mrunal Thakur,146
+Saaho,5.2,,Action,Prabhas,170
+Exit,7,,Action,Jo Jung-Suk,103
+Cliffs of Freedom,6.3,,Drama,Tania Raymonde,137
+Them That Follow,5.4,,Drama,Walton Goggins,98
+Unplanned,5.8,,Biography,Ashley Bratcher,109
+Student of the Year 2,2.2,,Action,Tiger Shroff,146
+The Divine Fury,6.2,,Action,Seo Jun Park,129
+Luka Chuppi,6.3,,Comedy,Kartik Aaryan,126
+De De Pyaar De,6.6,,Comedy,Ajay Devgn,135
+End of the Century,6.9,,Drama,Juan Barberini,84
+Bennett's War,5.9,,Sport,Michael Roark,94
+Code Geass: Lelouch of the Re;Surrection,7.4,,Animation,Jun Fukuyama,112
+Before You Know It,5.1,,Comedy,Hannah Pearl Utt,98
+Pilgrim's Progress,6.1,,Animation,David Thorpe,108
+Mine 9,6.4,,Drama,Terry Serpico,83
+Give Me Liberty,6.7,,Comedy,Chris Galust,110
+Romeo Akbar Walter,6.6,,Action,John Abraham,141
+Furie,6.3,,Action,Veronica Ngo,98
+Photograph,6.9,,Drama,Nawazuddin Siddiqui,110
+Ek Ladki Ko Dekha Toh Aisa Laga,5.5,,Comedy,Sonam Kapoor,120
+Body at Brighton Rock,4.8,,Horror,Karina Fontes,87
+The Bravest,5.6,,Action,Xiaoming Huang,118
+Bharat,4.9,,Action,Salman Khan,150
+42nd Street: The Musical,7.9,,Musical,Bonnie Langford,155
+Piranhas,6.3,,Crime,Francesco Di Napoli,111
+Clinton Road,5.9,,Horror,Ace Young,77
+High on the Hog,3.5,,Action,Sid Haig,85
+Kinky Boots: The Musical,8.2,,Musical,Matt Henry,135
+Play the Flute,6.9,,Drama,Brett Varvel,103
+Geolkapseu,5.9,,Action,Mi-ran Ra,107
+Shed of the Dead,4.7,,Comedy,Spencer Brown,82
+The Fighting Preacher,5.9,,Comedy,David McConnell,100
+Junglee,5.6,,Action,Vidyut Jammwal,115
+The Captain,6.2,,Action,Hanyu Zhang,111
+Total Dhamaal,4.2,,Action,Ajay Devgn,130
+The Untold Story,5.7,,Comedy,Miko Hughes,104
+No Manches Frida 2,4.2,,Comedy,Martha Higareda,102
+Line Walker 2: Invisible Spy,6,,Action,Louis Koo,98
+Money,5.9,,Crime,Ryu Jun-Yeol,115
+The Ground Beneath My Feet,6.5,,Drama,Valerie Pachner,108
+Open,7.9,,Drama,JC Santos,105
+The Least of These: The Graham Staines Story,6.4,,Drama,Sharman Joshi,112
+Saga of Tanya the Evil - The Movie,7.6,,Animation,Tesshô Genda,115
+Tod@s Caen,4.9,,Comedy,Martha Higareda,120
+"My People, My Country",6.5,,Drama,Bo Huang,154
+Alone/Together,6.8,,Drama,Liza Soberano,103
+The Other Side of Heaven 2: Fire of Faith,5.6,,Adventure,Christopher Gorham,117
+India's Most Wanted,4.5,,Action,Arjun Kapoor,123
+Chasing the Dragon II: Wild Wild Bunch,5.8,,Action,Tony Ka Fai Leung,101
+Round of Your Life,4.6,,Family,Cole Allen,91
+El Coyote,3,,Action,Michael Saquella,93
+By Light of Desert Night,4.8,,Drama,Alexandra Bokova,94
+A Brother's Love,6.8,,Drama,Anne-Élisabeth Bossé,117
+Tenet,7.4,,Action,John David Washington,150
+Wonder Woman 1984,5.4,,Action,Gal Gadot,151
+Birds of Prey,6.1,,Action,Margot Robbie,109
+The Invisible Man,7.1,,Drama,Elisabeth Moss,124
+Onward,7.4,,Animation,Tom Holland,102
+Bad Boys for Life,6.6,,Action,Will Smith,124
+Sonic the Hedgehog,6.5,,Action,Ben Schwartz,99
+Dolittle,5.6,,Adventure,Robert Downey Jr.,101
+The Call of the Wild,6.8,,Adventure,Harrison Ford,100
+The Eight Hundred,6.8,,Action,Zhi-zhong Huang,149
+The Quarry,5.4,,Crime,Shea Whigham,98
+Star Trek First Frontier,5.7,,Sci-Fi,Robert Pralgo,85
+Legend of Deification,6.6,,Animation,Guangtao Jiang,110
+Tulsa,5,,Comedy,Scott Pryor,120
+Leap,6.7,,Drama,Gong Li,135
+Black Wall Street Burning,6.6,,Drama,Dan Belcher,78
+I Am Fear,3.4,,Horror,Kristina Klebe,87
+Aloha Surf Hotel,7.1,,Comedy,Augie Tulba,90
+Love by Drowning,,,Drama,Nicky Whelan,121
+The Robinsons,,,Action,Billy Hartmann,90
+More to Life,3.1,,Drama,Shannon Bond,90
+Dream Round,4.7,,Comedy,Michael Saquella,90
+Saving Mbango,5.7,,Drama,Onyama Laura,
+It's Just Us,,,Drama,Christina Roz,120
+Tee em el,5.7,,Horror,Siyabonga Mabaso,102

@@ -8,19 +8,32 @@ const mongoose = require("mongoose");
 
 // 🏠 Home Routes
 router.get("/movies", homeController.getAllMovies);
-router.get("/movies/genre/:genreId", homeController.getMoviesByGenre);
-router.get("/movies/:id/details", homeController.getMovieDetails);
-router.get("/genres", homeController.getAllGenres);
+// router.get("/movies/genre/:genreId", homeController.getMoviesByGenre);
+// router.get("/movies/:id/details", homeController.getMovieDetails);
+// router.get("/genres", homeController.getAllGenres);
 router.get("/upcoming-movies", homeController.getUpcomingMovies);
-router.get("/content-types", homeController.getAllContentTypes);
+// router.get("/content-types", homeController.getAllContentTypes);
 router.post("/add-movie", homeController.addMovie);
 router.put("/update-movie/:id", homeController.updateMovie);
-router.get("/hollywood", homeController.getPaginatedMovies);
+router.get("/hollywood", homeController.getEnglishMovies); 
 router.get("/indian", homeController.getIndianMovies);
 router.get("/webseries", homeController.getAllWebSeries);
 router.get("/anime",homeController.getAllAnime);
 // 🛠 Dashboard (User List & CRUD)
-router.get("/index", userController.getUserList);
+
+
+// Route to fetch all available genres
+// router.get("/genres", homeController.getAllGenres);
+
+
+// router.get("/", (req, res) => {
+//     res.render("index");  // Default homepage
+// });
+
+
+
+router.get("/user", userController.getUserList);
+// router.get("/index", userController.getUserList);
 router.get("/edit/:id", async (req, res) => {
     try {
         if (!mongoose.Types.ObjectId.isValid(req.params.id)) {

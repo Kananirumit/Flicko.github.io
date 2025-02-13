@@ -10,7 +10,7 @@ dotenv.config();
 
 const app = express();
 
-const Content = require("./models/hollywoodModel");
+const Content = require("./models/EnglishModel");
 
 
 
@@ -28,33 +28,8 @@ const connectMongoDB = async () => {
       useUnifiedTopology: true,
     });
     console.log("✅ MongoDB Connected");
-
-    const moviesCount = await Content.countDocuments();
-    if (moviesCount === 0) {
-      console.log("📥 Importing movies from CSV...");
-      await importMoviesFromCSV();
-    }
   } catch (err) {
     console.error("❌ MongoDB Connection Error:", err);
-  }
-};
-
-const fetchMoviePoster = async (title) => {
-  try {
-    const apiKey = process.env.OMDB_API_KEY || '74a6f5ec';
-    const url = `http://www.omdbapi.com/?t=${encodeURIComponent(title)}&apikey=${apiKey}`;
-    
-    const response = await axios.get(url);
-    const data = response.data;
-
-    if (data.Response === "True") {
-      return data.Poster !== "N/A" ? data.Poster : "assets/img/default-poster.jpg";
-    } else {
-      return "assets/img/default-poster.jpg";
-    }
-  } catch (error) {
-    console.error("❌ Error fetching poster:", error);
-    return "assets/img/default-poster.jpg";
   }
 };
 

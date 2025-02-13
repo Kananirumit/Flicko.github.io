@@ -12,7 +12,21 @@
                     </div>
                 </div>
             </div>
-
+            <div class="row mb-3">
+                <div class="col-12">
+                  <div class="search-container">
+                    <form action="/webseries" method="GET">
+                      <input
+                        type="text"
+                        name="search"
+                        placeholder="Search here..."
+                        value="<%= searchQuery %>"
+                      />
+                      <button type="submit">Search</button>
+                    </form>
+                  </div>
+                </div>
+              </div>
             <div class="row">
                 <div class="col-12 col-xl-12">
                     <div class="dashbox">
@@ -92,4 +106,71 @@
             </div>
         </div>
     </main>
-</body>
+    <script>
+        function showSuggestions() {
+        let searchValue = document.getElementById("searchInput").value.toLowerCase();
+        let suggestionsBox = document.getElementById("suggestions");
+        suggestionsBox.innerHTML = "";
+        
+        if (searchValue.length < 2) {
+          suggestionsBox.style.display = "none";
+          return;
+        }
+    
+        let matchedMovies = [];
+        let rows = document.querySelectorAll(".movie-row");
+    
+        rows.forEach(row => {
+          let title = row.querySelector(".movie-title").innerText.toLowerCase();
+          if (title.includes(searchValue)) {
+            matchedMovies.push(title);
+          }
+        });
+    
+        if (matchedMovies.length === 0) {
+          suggestionsBox.style.display = "none";
+        } else {
+          matchedMovies = [...new Set(matchedMovies)]; // Remove duplicates
+          matchedMovies.forEach(movie => {
+            let suggestionItem = document.createElement("div");
+            suggestionItem.innerText = movie;
+            suggestionItem.onclick = function() {
+              document.getElementById("searchInput").value = movie;
+              suggestionsBox.style.display = "none";
+              filterMovies();
+            };
+            suggestionsBox.appendChild(suggestionItem);
+          });
+          suggestionsBox.style.display = "block";
+        }
+      }
+    
+        function filterMovies() {
+          let searchValue = document
+            .getElementById("searchInput")
+            .value.toLowerCase();
+          let rows = document.querySelectorAll(".movie-row");
+    
+          rows.forEach((row) => {
+            let title = row.querySelector(".movie-title").innerText.toLowerCase();
+            let genre = row.querySelector(".movie-genre").innerText.toLowerCase();
+            let rating = row.querySelector(".movie-rating").innerText.toLowerCase();
+            let contentType = row
+              .querySelector(".movie-contenttype")
+              .innerText.toLowerCase();
+    
+            if (
+              title.includes(searchValue) ||
+              genre.includes(searchValue) ||
+              rating.includes(searchValue) ||
+              contentType.includes(searchValue)
+            ) {
+              row.style.display = "";
+            } else {
+              row.style.display = "none";
+            }
+          });
+        }
+      </script>
+    </body>
+    

@@ -1,8 +1,10 @@
-const mongoose = require('mongoose');
+const mongoose = require("mongoose");
 
-const contentGenreSchema = new mongoose.Schema({
-  contentId: { type: mongoose.Schema.Types.ObjectId, ref: 'Content' },
-  genreId: { type: mongoose.Schema.Types.ObjectId, ref: 'Genres' },
+const ContentGenreSchema = new mongoose.Schema({
+    name: { type: String, required: true, unique: true }
 });
 
-module.exports = mongoose.model('ContentGenres', contentGenreSchema);
+// ✅ Check if model already exists before defining it
+const ContentGenre = mongoose.models.ContentGenre || mongoose.model("ContentGenre", ContentGenreSchema);
+
+module.exports = ContentGenre;

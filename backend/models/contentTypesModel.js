@@ -1,12 +1,9 @@
-const mongoose = require('mongoose');
+const mongoose = require("mongoose");
 
-const contentTypeSchema = new mongoose.Schema({
-  typeName: {
-    type: String,
-    required: true
-  }
+const ContentGenreSchema = new mongoose.Schema({
+    name: { type: String, required: true, unique: true } // Example: "Action", "Comedy", "Drama"
 });
 
-const ContentType = mongoose.model('ContentType', contentTypeSchema);
+const ContentGenre = mongoose.model("ContentGenre", ContentGenreSchema);
 
-module.exports = ContentType;
+module.exports = ContentGenre;
