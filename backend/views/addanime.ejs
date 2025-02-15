@@ -1,0 +1,52 @@
+<div class="container-fluid">
+    <div class="row">
+
+        <!-- Main Content Area (Takes remaining space) -->
+        <main class="col-md-9 ms-sm-auto px-3">
+            <h2 class="mt-4 text-light">Anime Management</h2>
+
+            <form id="animeForm" action="/addanime" method="POST" class="p-3 rounded bg-dark text-light">
+                <input type="hidden" id="animeId" name="id">
+
+                <div class="row">
+                    <div class="col-md-6">
+                        <label class="form-label">Title:</label>
+                        <input type="text" id="title" name="title" class="form-control mb-2" required />
+                    </div>
+                    <div class="col-md-6">
+                        <label class="form-label">Year:</label>
+                        <input type="number" id="year" name="year" class="form-control mb-2" required />
+                    </div>
+                    <div class="col-md-6">
+                        <label class="form-label">Genres:</label>
+                        <input type="text" name="genres" class="form-control mb-2" required />
+                    </div>
+                    <div class="col-md-6">
+                        <label class="form-label">Episodes:</label>
+                        <input type="number" name="episodes" class="form-control mb-2" required />
+                    </div>
+                    <div class="col-md-6">
+                        <label class="form-label">Rating:</label>
+                        <input type="text" name="rating" class="form-control mb-2" required />
+                    </div>
+                    <div class="col-md-6">
+                        <label class="form-label">Content Type:</label>
+                        <input type="text" name="contenttype" class="form-control mb-2" required />
+                    </div>
+                    <div class="col-md-6">
+                        <label class="form-label">Trailer URL:</label>
+                        <input type="text" name="trailer" class="form-control mb-2" />
+                    </div>
+                    <div class="col-md-6">
+                        <label class="form-label">Poster URL:</label>
+                        <input type="text" name="PosterUrl" class="form-control mb-2" />
+                    </div>
+                </div>
+
+                <button type="submit" class="btn btn-primary mt-3 w-100">Add/Update Anime</button>
+            </form>
+
+            <hr class="text-light">
+        </main>
+    </div>
+</div>

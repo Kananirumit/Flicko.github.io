@@ -11,15 +11,14 @@ const fetchMoviePoster = require("../fetchMoviePoster");
 
 const OMDB_API_KEY_MOVIES = process.env.OMDB_API_KEY_MOVIES || "74a6f5ec"; // API key for English and Indian Movies
 const OMDB_API_KEY_SERIES = process.env.OMDB_API_KEY_SERIES || "8909b00d"; // API key for Web Series and Anime
-const OMDB_URL = "http://www.omdbapi.com/"; 
 
 const getAllMovies = async (req, res) => {
   try {
     const movies = await Content.find({}, "title watchLink");
-    res.render("hollywood", { 
-      movies, 
-      currentPage: req.query.page ? parseInt(req.query.page) : 1, 
-      totalPages: Math.ceil(movies.length / 10) 
+    res.render("hollywood", {
+      movies,
+      currentPage: req.query.page ? parseInt(req.query.page) : 1,
+      totalPages: Math.ceil(movies.length / 10),
     });
   } catch (error) {
     res.status(500).send("Internal Server Error");
@@ -38,8 +37,13 @@ const getPoster = async (title, type) => {
       return existingMovie.Poster;
     }
 
-    const apiKey = type === "series" || type === "anime" ? OMDB_API_KEY_SERIES : OMDB_API_KEY_MOVIES;
-    const url = `http://www.omdbapi.com/?t=${encodeURIComponent(title)}&apikey=${apiKey}`;
+    const apiKey =
+      type === "series" || type === "anime"
+        ? OMDB_API_KEY_SERIES
+        : OMDB_API_KEY_MOVIES;
+    const url = `http://www.omdbapi.com/?t=${encodeURIComponent(
+      title
+    )}&apikey=${apiKey}`;
 
     const response = await axios.get(url);
 
@@ -47,10 +51,17 @@ const getPoster = async (title, type) => {
       return "/assets/img/default-poster.jpg";
     }
 
-    const posterUrl = response.data.Poster !== "N/A" ? response.data.Poster : "/assets/img/default-poster.jpg";
+    const posterUrl =
+      response.data.Poster !== "N/A"
+        ? response.data.Poster
+        : "/assets/img/default-poster.jpg";
 
     // Store in DB to prevent multiple API calls
-    await English.updateOne({ title: title }, { $set: { Poster: posterUrl } }, { upsert: true });
+    await English.updateOne(
+      { title: title },
+      { $set: { Poster: posterUrl } },
+      { upsert: true }
+    );
 
     return posterUrl;
   } catch (error) {
@@ -59,14 +70,15 @@ const getPoster = async (title, type) => {
   }
 };
 
-
 // --- Get Upcoming Movies ---
 const getUpcomingMovies = async (_, res) => {
   try {
     const movies = await UpcomingMovie.find();
     res.json(movies);
   } catch (err) {
-    res.status(500).json({ message: "Error fetching upcoming movies", error: err.message });
+    res
+      .status(500)
+      .json({ message: "Error fetching upcoming movies", error: err.message });
   }
 };
 
@@ -76,27 +88,37 @@ const getAllContentTypes = async (_, res) => {
     const contentTypes = await ContentTypes.find();
     res.json(contentTypes);
   } catch (err) {
-    res.status(500).json({ message: "Error fetching content types", error: err.message });
+    res
+      .status(500)
+      .json({ message: "Error fetching content types", error: err.message });
   }
 };
 const addMovie = async (req, res) => {
   try {
     const { title, releaseDate, rating, genres, runtime, type } = req.body;
-    
+
     if (!title) {
       return res.status(400).json({ message: "Title is required" });
     }
 
-    const apiKey = type === "series" || type === "anime" ? OMDB_API_KEY_SERIES : OMDB_API_KEY_MOVIES;
-    const omdbResponse = await axios.get(`https://www.omdbapi.com/?apikey=${apiKey}&t=${title}`);
+    const apiKey =
+      type === "series" || type === "anime"
+        ? OMDB_API_KEY_SERIES
+        : OMDB_API_KEY_MOVIES;
+    const omdbResponse = await axios.get(
+      `https://www.omdbapi.com/?apikey=${apiKey}&t=${title}`
+    );
 
     if (!omdbResponse.data || omdbResponse.data.Response === "False") {
       return res.status(404).json({ message: "Movie not found in API" });
     }
 
     const movieData = omdbResponse.data;
-    const posterUrl = movieData.Poster !== "N/A" ? movieData.Poster : "/img/default-poster.jpg";
-    const processedRuntime = movieData.Runtime ? parseInt(movieData.Runtime.split(" ")[0], 10) : runtime;
+    const posterUrl =
+      movieData.Poster !== "N/A" ? movieData.Poster : "/img/default-poster.jpg";
+    const processedRuntime = movieData.Runtime
+      ? parseInt(movieData.Runtime.split(" ")[0], 10)
+      : runtime;
 
     const watchLink = movieData.imdbID
       ? `https://www.imdb.com/title/${movieData.imdbID}/`
@@ -109,18 +131,17 @@ const addMovie = async (req, res) => {
       posterUrl,
       genres,
       runtime: processedRuntime,
-      watchLink 
+      watchLink,
     });
 
     await newMovie.save();
-    res.status(201).json({ message: "Movie added successfully", movie: newMovie });
+    res
+      .status(201)
+      .json({ message: "Movie added successfully", movie: newMovie });
   } catch (err) {
     res.status(500).json({ message: "Error adding movie", error: err.message });
   }
 };
-
-
-
 
 // --- Update Movie Details ---
 const updateMovie = async (req, res) => {
@@ -128,7 +149,9 @@ const updateMovie = async (req, res) => {
     const { id } = req.params;
     const updateData = req.body;
 
-    const updatedMovie = await Content.findByIdAndUpdate(id, updateData, { new: true });
+    const updatedMovie = await Content.findByIdAndUpdate(id, updateData, {
+      new: true,
+    });
 
     if (!updatedMovie) {
       return res.status(404).json({ message: "Movie not found" });
@@ -136,7 +159,9 @@ const updateMovie = async (req, res) => {
 
     res.json({ message: "Movie updated successfully", movie: updatedMovie });
   } catch (err) {
-    res.status(500).json({ message: "Error updating movie", error: err.message });
+    res
+      .status(500)
+      .json({ message: "Error updating movie", error: err.message });
   }
 };
 const getEnglishMovies = async (req, res) => {
@@ -156,8 +181,10 @@ const getEnglishMovies = async (req, res) => {
     const totalPages = Math.ceil(totalMovies / limit);
 
     // Fetch filtered movies with pagination
-    const englishMovies = await English.find(searchFilter).skip(skip).limit(limit).lean(); // Use lean() for better performance
-
+    const englishMovies = await English.find(searchFilter)
+      .skip(skip)
+      .limit(limit)
+      .lean(); // Use lean() for better performance
 
     // Fetch missing posters
     const updatedEnglishMovies = await Promise.all(
@@ -166,12 +193,18 @@ const getEnglishMovies = async (req, res) => {
         if (!movie.title) {
           return { ...movie, posterUrl: "/assets/img/default-poster.jpg" };
         }
-    
+
         try {
           let posterUrl = movie.posterUrl || "/assets/img/default-poster.jpg";
-          if (!movie.posterUrl || movie.posterUrl === "/assets/img/default-poster.jpg") {
+          if (
+            !movie.posterUrl ||
+            movie.posterUrl === "/assets/img/default-poster.jpg"
+          ) {
             posterUrl = await getPoster(movie.title, "movie");
-            await English.updateOne({ _id: movie._id }, { $set: { posterUrl } });
+            await English.updateOne(
+              { _id: movie._id },
+              { $set: { posterUrl } }
+            );
           }
           return { ...movie, posterUrl };
         } catch (posterError) {
@@ -179,7 +212,7 @@ const getEnglishMovies = async (req, res) => {
         }
       })
     );
-    
+
     res.render("hollywood", {
       englishMovies: updatedEnglishMovies,
       currentPage: page,
@@ -191,7 +224,6 @@ const getEnglishMovies = async (req, res) => {
     res.status(500).send("Internal Server Error");
   }
 };
-
 
 const getIndianMovies = async (req, res) => {
   try {
@@ -210,12 +242,17 @@ const getIndianMovies = async (req, res) => {
     const totalPages = Math.ceil(totalMovies / limit);
 
     // Fetch filtered movies with pagination
-    const indianMovies = await Indian.find(searchFilter).skip(skip).limit(limit);
+    const indianMovies = await Indian.find(searchFilter)
+      .skip(skip)
+      .limit(limit);
 
     // Fetch missing posters
     const updatedIndianMovies = await Promise.all(
       indianMovies.map(async (movie) => {
-        if (!movie.posterUrl || movie.posterUrl === "/assets/img/default-poster.jpg") {
+        if (
+          !movie.posterUrl ||
+          movie.posterUrl === "/assets/img/default-poster.jpg"
+        ) {
           const posterUrl = await getPoster(movie.title, "movie");
           await Indian.updateOne({ _id: movie._id }, { $set: { posterUrl } });
           return { ...movie.toObject(), posterUrl };
@@ -267,11 +304,11 @@ const getAllWebSeries = async (req, res) => {
       })
     );
 
-    res.render("webseries", { 
-      webSeries: updatedSeries, 
-      currentPage: page, 
-      totalPages, 
-      searchQuery // Send searchQuery to maintain input value in frontend
+    res.render("webseries", {
+      webSeries: updatedSeries,
+      currentPage: page,
+      totalPages,
+      searchQuery, // Send searchQuery to maintain input value in frontend
     });
   } catch (error) {
     console.error("❌ Error fetching Web Series:", error);
@@ -281,49 +318,133 @@ const getAllWebSeries = async (req, res) => {
 
 const getAllAnime = async (req, res) => {
   try {
-      const searchQuery = req.query.search || ""; // Get search input
-      const page = parseInt(req.query.page) || 1;
-      const limit = 10;
-      let animeList, totalAnime, totalPages;
+    const searchQuery = req.query.search || "";
+    const page = parseInt(req.query.page) || 1;
+    const limit = 10;
 
-      const filter = searchQuery
-          ? { title: { $regex: searchQuery, $options: "i" } } // Case-insensitive search
-          : {}; // If no search query, fetch all
+    const filter = searchQuery
+      ? { title: { $regex: searchQuery, $options: "i" } }
+      : {};
 
-      totalAnime = await AnimeModel.countDocuments(filter); // Count based on search
-      totalPages = searchQuery ? 1 : Math.ceil(totalAnime / limit); // Reset to 1 page if searching
+    const totalAnime = await AnimeModel.countDocuments(filter);
+    const totalPages = searchQuery ? 1 : Math.ceil(totalAnime / limit);
+    const skip = searchQuery ? 0 : (page - 1) * limit;
 
-      const skip = searchQuery ? 0 : (page - 1) * limit;
-      animeList = await AnimeModel.find(filter).skip(skip).limit(limit);
+    const animeList = await AnimeModel.find(filter).skip(skip).limit(limit);
 
-      console.log(`Search Query: "${searchQuery}", Total Found: ${totalAnime}`);
-
-      res.render("anime", {
-          anime: animeList, 
-          currentPage: searchQuery ? 1 : page,
-          totalPages: totalPages,
-          searchQuery: searchQuery
-      });
-
+    res.render("anime", {
+      anime: animeList,
+      currentPage: searchQuery ? 1 : page,
+      totalPages,
+      searchQuery,
+    });
   } catch (error) {
-      console.error("Error fetching anime:", error);
-      res.status(500).json({ error: "Something went wrong!" });
+    console.error("Error fetching anime:", error);
+    res.status(500).json({ error: "Something went wrong!" });
   }
 };
-const path = require("path");
-const fs = require("fs");
 
-// Function to get the local image based on the movie title
-const getLocalImage = (title) => {
-  const formattedTitle = title.toLowerCase().replace(/\s+/g, "-"); // Convert title to lowercase and replace spaces with hyphens
-  const imagePath = path.join(__dirname, "../public/images/", `${formattedTitle}.jpg`);
-
-  if (fs.existsSync(imagePath)) {
-    return `/images/${formattedTitle}.jpg`; // Return the correct image path
-  } else {
-    return "/images/default-poster.jpg"; // Return a default image if not found
+// Create a new anime entry
+const createAnime = async (req, res) => {
+  try {
+    const { title, genre, releaseYear, rating } = req.body;
+    const newAnime = new AnimeModel({ title, genre, releaseYear, rating });
+    await newAnime.save();
+    res.redirect("/anime");
+  } catch (error) {
+    console.error("Error creating anime:", error);
+    res.status(500).json({ error: "Failed to create anime." });
   }
 };
+
+// Get a single anime by ID
+const getAnimeById = async (req, res) => {
+  try {
+    const anime = await AnimeModel.findById(req.params.id);
+    if (!anime) return res.status(404).json({ error: "Anime not found." });
+    res.json(anime);
+  } catch (error) {
+    console.error("Error fetching anime by ID:", error);
+    res.status(500).json({ error: "Something went wrong!" });
+  }
+};
+
+
+const getEditAnimePage = async (req, res) => {
+    try {
+        const animeId = req.params.id;
+        const anime = await AnimeModel.findById(animeId);
+
+        if (!anime) {
+            return res.status(404).send("Anime not found");
+        }
+
+        res.render("editAnime", { anime, layout: "layout/authlayout" });
+    } catch (error) {
+        console.error("Error fetching anime for edit:", error);
+        res.status(500).send("Something went wrong!");
+    }
+};
+const updateAnime = async (req, res) => {
+  try {
+      const { id } = req.params;
+      const { title, description } = req.body;
+
+      const updatedAnime = await AnimeModel.findByIdAndUpdate(
+          id,
+          { title, description },
+          { new: true }
+      );
+
+      if (!updatedAnime) {
+          return res.status(404).send("Anime not found");
+      }
+
+      res.redirect("/anime"); // Redirect back to anime list
+  } catch (error) {
+      console.error("Error updating anime:", error);
+      res.status(500).send("Something went wrong!");
+  }
+};
+
+// Delete anime by ID
+const deleteAnime = async (req, res) => {
+  try {
+    const deletedAnime = await AnimeModel.findByIdAndDelete(req.params.id);
+    if (!deletedAnime)
+      return res.status(404).json({ error: "Anime not found." });
+    res.redirect("/anime");
+  } catch (error) {
+    console.error("Error deleting anime:", error);
+    res.status(500).json({ error: "Failed to delete anime." });
+  }
+};
+// Show Add Anime Page
+const getAddAnimePage = (req, res) => {
+  res.render("addAnime"); // Ensure you have "addAnime.ejs" in your views folder
+};
+const postAddAnime = async (req, res) => {
+  try {
+    console.log("Received data:", req.body);
+
+    const { title, genre, description } = req.body;
+    if (!title || !genre || !description) {
+      return res.status(400).json({ error: "All fields are required!" });
+    }
+
+    const newAnime = new AnimeModel({ title, genre, description });
+    await newAnime.save();
+
+    res.redirect("/anime"); // Redirect to anime list after successful addition
+  } catch (error) {
+    console.error("❌ Error adding anime:", error);
+    res.status(500).json({ error: error.message || "Something went wrong!" });
+  }
+};
+
+
+
+
 // --- Export Controllers ---
 module.exports = {
   getAllMovies,
@@ -336,4 +457,11 @@ module.exports = {
   getIndianMovies,
   getAllWebSeries,
   getAllAnime,
+  createAnime,
+  getAnimeById,
+  getEditAnimePage,
+  updateAnime,
+  deleteAnime,
+  postAddAnime,
+  getAddAnimePage,
 };

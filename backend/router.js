@@ -3,8 +3,7 @@ const router = express.Router();
 const homeController = require("./controller/homeController");
 const userController = require("./controller/userController");
 const User = require("./models/userModel");
-
-const mongoose = require("mongoose");
+const AnimeModel = require("./models/animeModel");
 
 // 🏠 Home Routes
 router.get("/movies", homeController.getAllMovies);
@@ -19,19 +18,32 @@ router.get("/hollywood", homeController.getEnglishMovies);
 router.get("/indian", homeController.getIndianMovies);
 router.get("/webseries", homeController.getAllWebSeries);
 router.get("/anime",homeController.getAllAnime);
-// 🛠 Dashboard (User List & CRUD)
+router.get("/anime/edit/:id", homeController.getEditAnimePage);
+router.post("/anime/update/:id", homeController.updateAnime);
+router.get("/anime/delete/:id", homeController.deleteAnime);
+router.get("/addanime", homeController.getAddAnimePage);
+router.post("/addanime", async (req, res) => {
+    try {
+        const newAnime = new AnimeModel(req.body);
+        await newAnime.save();
+        
+        // ✅ Redirect to the anime page instead of sending JSON
+        res.redirect("/anime");
+    } catch (error) {
+        console.error(error);
+        res.status(500).send({ message: "Something went wrong!" });
+    }
+});
 
 
-// Route to fetch all available genres
-// router.get("/genres", homeController.getAllGenres);
-
-
-// router.get("/", (req, res) => {
-//     res.render("index");  // Default homepage
-// });
 
 
 
+
+
+router.get("/index", (req, res) => {
+    res.render("index");  // Default homepage
+});
 router.get("/user", userController.getUserList);
 // router.get("/index", userController.getUserList);
 router.get("/edit/:id", async (req, res) => {

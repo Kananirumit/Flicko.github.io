@@ -1,0 +1,83 @@
+
+<main class="d-flex align-items-center justify-content-center min-vh-100">
+  <div class="container">
+      <div class="row justify-content-center">
+          <div class="col-md-6">
+              <div class="card shadow-lg border-0 rounded-4" style="background: #1c1c1c; color: #fff; padding: 20px;">
+                  <div class="card-header text-center" style="background: transparent; border-bottom: none;">
+                      <h4 class="mb-0 fw-bold text-danger">EDIT ANIME</h4>
+                  </div>
+                  <div class="card-body">
+                      <form action="/anime/update/<%= anime._id %>" method="POST">
+                          
+                          <div class="mb-3">
+                              <label class="form-label text-light">Title:</label>
+                              <input type="text" name="title" class="form-control rounded-3" 
+                                     style="background: #292929; border: 1px solid #ff3d71; color: #fff;"
+                                     value="<%= anime.title %>" required>
+                          </div>
+
+                          <div class="mb-3">
+                              <label class="form-label text-light">Genres:</label>
+                              <input type="text" name="genres" class="form-control rounded-3" 
+                                     style="background: #292929; border: 1px solid #ff3d71; color: #fff;"
+                                     value="<%= anime.genres.join(', ') %>" required>
+                          </div>
+
+                          <div class="mb-3">
+                              <label class="form-label text-light">Episodes:</label>
+                              <input type="number" name="episodes" class="form-control rounded-3" 
+                                     style="background: #292929; border: 1px solid #ff3d71; color: #fff;"
+                                     value="<%= anime.episodes %>" required>
+                          </div>
+
+                          <div class="mb-3">
+                              <label class="form-label text-light">Rating:</label>
+                              <input type="text" name="rating" class="form-control rounded-3" 
+                                     style="background: #292929; border: 1px solid #ff3d71; color: #fff;"
+                                     value="<%= anime.rating %>" required>
+                          </div>
+
+                          <div class="mb-3">
+                              <label class="form-label text-light">Content Type:</label>
+                              <input type="text" name="contenttype" class="form-control rounded-3" 
+                                     style="background: #292929; border: 1px solid #ff3d71; color: #fff;"
+                                     value="<%= anime.contenttype %>" required>
+                          </div>
+
+                          <div class="mb-3">
+                              <label class="form-label text-light">Trailer URL:</label>
+                              <input type="url" name="trailer" class="form-control rounded-3" 
+                                     style="background: #292929; border: 1px solid #ff3d71; color: #fff;"
+                                     value="<%= anime.trailer %>" placeholder="https://example.com/trailer">
+                          </div>
+
+                          <div class="mb-3">
+                              <label class="form-label text-light">Poster URL:</label>
+                              <input type="url" name="posterUrl" class="form-control rounded-3" 
+                                     style="background: #292929; border: 1px solid #ff3d71; color: #fff;"
+                                     value="<%= anime.PosterUrl %>" placeholder="https://example.com/poster.jpg">
+                          </div>
+
+                          <div class="row g-2">
+                              <div class="col-6">
+                                  <button type="submit" class="btn w-100 rounded-3 fw-bold"
+                                          style="background: linear-gradient(135deg, #ff3d71, #ff6b9e); border: none; color: #fff;">
+                                      UPDATE
+                                  </button>
+                              </div>
+                              <div class="col-6">
+                                  <a href="/index" class="btn w-100 rounded-3"
+                                     style="background: transparent; border: 1px solid #ff3d71; color: #ff3d71;">
+                                      CANCEL
+                                  </a>
+                              </div>
+                          </div>
+
+                      </form>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+</main>
