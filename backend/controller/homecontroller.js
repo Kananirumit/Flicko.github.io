@@ -1,4 +1,5 @@
 require("dotenv").config();
+const mongoose = require("mongoose");
 const axios = require("axios");
 const English = require("../models/EnglishModel");
 const Indian = require("../models/indianModel");
@@ -445,6 +446,226 @@ const postAddAnime = async (req, res) => {
 
 
 
+const getAddEnglishPage = (req, res) => {
+  res.render("addEnglish"); // Ensure you have "addEnglish.ejs" in your views folder
+};
+
+const postAddEnglish = async (req, res) => {
+  try {
+    console.log("🔹 Received Data:", req.body); // ✅ Debugging
+
+    const { title, rating, genre, cast, runtime } = req.body;
+
+    // 🔴 Check if any field is missing
+    if (!title || !rating || !genre || !cast || !runtime) {
+      console.log("⚠️ Missing Fields!");
+      return res.status(400).json({ error: "All fields are required!" });
+    }
+
+    const newEnglish = new English({ title, rating, genre, cast, runtime });
+    await newEnglish.save();
+
+    res.redirect("/hollywood");
+  } catch (error) {
+    console.error("❌ Error adding English movie:", error);
+    res.status(500).json({ error: error.message || "Something went wrong!" });
+  }
+};
+
+const deleteEnglish = async (req, res) => {
+  try {
+    const deletedEnglish = await English.findByIdAndDelete(req.params.id);
+    if (!deletedEnglish)
+      return res.status(404).json({ error: "EnglishMovie not found." });
+    res.redirect("/hollywood");
+  } catch (error) {
+    console.error("Error deleting EnglishMovie:", error);
+    res.status(500).json({ error: "Failed to delete EnglishMovie." });
+  }
+};
+const getEditEnglishPage = async (req, res) => {
+  try {
+      const englishId = req.params.id;
+      const english = await English.findById(englishId);
+
+      if (!english) {
+          return res.status(404).send("EnglishMovie not found");
+      }
+
+      res.render("editEnglish", { english, layout: "layout/authlayout" });
+  } catch (error) {
+      console.error("Error fetching English movie for edit:", error);
+      res.status(500).send("Something went wrong!");
+  }
+};
+const updateEnglish = async (req, res) => {
+try {
+    const { id } = req.params;
+    const { title,rating,genre,cast,runtime } = req.body;
+
+    const updatedEnglish = await English.findByIdAndUpdate(
+        id,
+        { title,rating,genre,cast,runtime },
+        { new: true }
+    );
+
+    if (!updatedEnglish) {
+        return res.status(404).send("English not found");
+    }
+
+    res.redirect("/hollywood"); // Redirect back to anime list
+} catch (error) {
+    console.error("Error updating english:", error);
+    res.status(500).send("Something went wrong!");
+}
+};
+const getAddIndianPage = (req, res) => {
+  res.render("addIndian"); // Ensure you have "addEnglish.ejs" in your views folder
+};
+
+const postAddIndian = async (req, res) => {
+  try {
+    console.log("🔹 Received Data:", req.body); // ✅ Debugging
+
+    const { title, year, genre,director, cast, overview } = req.body;
+
+    // 🔴 Check if any field is missing
+    if (!title || !year || !genre || !director || !cast || !overview) {
+      console.log("⚠️ Missing Fields!");
+      return res.status(400).json({ error: "All fields are required!" });
+    }
+
+    const newIndian = new Indian({ title, year, genre, director, cast, overview });
+    await newIndian.save();
+
+    res.redirect("/indian");
+  } catch (error) {
+    console.error("❌ Error adding Indian movie:", error);
+    res.status(500).json({ error: error.message || "Something went wrong!" });
+  }
+};
+
+const deleteIndian = async (req, res) => {
+  try {
+    const deletedIndian = await Indian.findByIdAndDelete(req.params.id);
+    if (!deletedIndian)
+      return res.status(404).json({ error: "IndianMovie not found." });
+    res.redirect("/indian");
+  } catch (error) {
+    console.error("Error deleting IndianMovie:", error);
+    res.status(500).json({ error: "Failed to delete IndianMovie." });
+  }
+};
+const getEditIndianPage = async (req, res) => {
+  try {
+      const indianId = req.params.id;
+      const indian = await Indian.findById(indianId);
+
+      if (!indian) {
+          return res.status(404).send("IndianMovie not found");
+      }
+
+      res.render("editIndian", { indian, layout: "layout/authlayout" });
+  } catch (error) {
+      console.error("Error fetching Indian movie for edit:", error);
+      res.status(500).send("Something went wrong!");
+  }
+};
+const updateIndian = async (req, res) => {
+try {
+    const { id } = req.params;
+    const { title,year,genre,director,cast,overview } = req.body;
+
+    const updatedIndian = await Indian.findByIdAndUpdate(
+        id,
+        { title,year,genre,director,cast,overview },
+        { new: true }
+    );
+
+    if (!updatedIndian) {
+        return res.status(404).send("Indian not found");
+    }
+
+    res.redirect("/indian"); // Redirect back to anime list
+} catch (error) {
+    console.error("Error updating indian:", error);
+    res.status(500).send("Something went wrong!");
+}
+};
+const getAddWebseriesPage = (req, res) => {
+  res.render("addWebseries"); // Ensure you have "addEnglish.ejs" in your views folder
+};
+
+const postAddWebseries = async (req, res) => {
+  try {
+    console.log("🔹 Received Data:", req.body); // ✅ Debugging
+
+    const {title, yearReleased, contentRating, rating, genre,noofSeasons, streamingPlatform } = req.body;
+
+    // 🔴 Check if any field is missing
+    if (!title || !yearReleased || !contentRating|| !rating || !genre || !noofSeasons || !streamingPlatform ) {
+      console.log("⚠️ Missing Fields!");
+      return res.status(400).json({ error: "All fields are required!" });
+    }
+
+    const newWebseries = new Webseries({title, yearReleased, contentRating, rating, genre,noofSeasons, streamingPlatform});
+    await newWebseries.save();
+
+    res.redirect("/webseries");
+  } catch (error) {
+    console.error("❌ Error adding Webseries:", error);
+    res.status(500).json({ error: error.message || "Something went wrong!" });
+  }
+};
+
+const deleteWebseries = async (req, res) => {
+  try {
+    const deletedWebseries = await Webseries.findByIdAndDelete(req.params.id);
+    if (!deletedWebseries)
+      return res.status(404).json({ error: "Webseries not found." });
+    res.redirect("/webseries");
+  } catch (error) {
+    console.error("Error deleting Webseries:", error);
+    res.status(500).json({ error: "Failed to delete Webseries." });
+  }
+};
+const getEditWebseriesPage = async (req, res) => {
+  try {
+      const webseriesId = req.params.id;
+      const webseries = await Webseries.findById(webseriesId);
+
+      if (!webseries) {
+          return res.status(404).send("Webseries not found");
+      }
+
+      res.render("editWebseries", { webseries, layout: "layout/authlayout" });
+  } catch (error) {
+      console.error("Error fetching English movie for edit:", error);
+      res.status(500).send("Something went wrong!");
+  }
+};
+const updateWebseries = async (req, res) => {
+try {
+    const { id } = req.params;
+    const { title, yearReleased, contentRating,rating ,genre, noofSeasons,streamingPlatform  } = req.body;
+
+    const updatedWebseries = await Webseries.findByIdAndUpdate(
+        id,
+        { title, yearReleased, contentRating,rating ,genre, noofSeasons,streamingPlatform  },
+        { new: true }
+    );
+
+    if (!updatedWebseries) {
+        return res.status(404).send("English not found");
+    }
+
+    res.redirect("/webseries"); // Redirect back to anime list
+} catch (error) {
+    console.error("Error updating Webseries:", error);
+    res.status(500).send("Something went wrong!");
+}
+};
+
 // --- Export Controllers ---
 module.exports = {
   getAllMovies,
@@ -464,4 +685,19 @@ module.exports = {
   deleteAnime,
   postAddAnime,
   getAddAnimePage,
+  getAddEnglishPage,
+  postAddEnglish,
+  deleteEnglish,
+  getEditEnglishPage,
+  updateEnglish,
+  getAddIndianPage,
+  postAddIndian,
+  deleteIndian,
+  getEditIndianPage,
+  updateIndian,
+  getAddWebseriesPage,
+  postAddWebseries,
+  deleteWebseries,
+  getEditWebseriesPage,
+  updateWebseries,
 };

@@ -1,0 +1,38 @@
+<div class="container-fluid">
+    <div class="row">
+        <main class="col-md-9 ms-sm-auto px-3">
+            <h2 class="mt-4 text-light">Add English Movie</h2>
+
+            <form id="englishForm" action="/addenglish" method="POST" class="p-3 rounded bg-dark text-light">
+                <input type="hidden" id="movieId" name="id">
+
+                <div class="row">
+                    <div class="col-md-6">
+                        <label class="form-label">Title:</label>
+                        <input type="text" id="title" name="title" class="form-control mb-2" required />
+                    </div>
+                    <div class="col-md-6">
+                        <label class="form-label">Rating:</label>
+                        <input type="text" name="rating" class="form-control mb-2" required />
+                    </div>
+                    <div class="col-md-6">
+                        <label class="form-label">Genres:</label>
+                        <input type="text" name="genre" class="form-control mb-2" required />
+                    </div>
+                    <div class="col-md-6">
+                        <label class="form-label">Cast:</label>
+                        <input type="text" name="cast" class="form-control mb-2" required />
+                    </div>
+                    <div class="col-md-6">
+                        <label class="form-label">Runtime (in minutes):</label>
+                        <input type="number" name="runtime" class="form-control mb-2" required />
+                    </div>
+                </div>
+
+                <button type="submit" class="btn btn-primary mt-3 w-100">Add Movie</button>
+            </form>
+
+            <hr class="text-light">
+        </main>
+    </div>
+</div>

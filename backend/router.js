@@ -4,6 +4,9 @@ const homeController = require("./controller/homeController");
 const userController = require("./controller/userController");
 const User = require("./models/userModel");
 const AnimeModel = require("./models/animeModel");
+const English = require("./models/EnglishModel");
+const Indian = require("./models/indianModel"); 
+const webSeries = require("./models/webseriesModel")
 
 // 🏠 Home Routes
 router.get("/movies", homeController.getAllMovies);
@@ -34,10 +37,81 @@ router.post("/addanime", async (req, res) => {
         res.status(500).send({ message: "Something went wrong!" });
     }
 });
+router.get("/hollywood/edit/:id", homeController.getEditEnglishPage);
+router.post("/hollywood/update/:id", homeController.updateEnglish);
+router.get("/hollywood/delete/:id", homeController.deleteEnglish);
+router.get("/addenglish", homeController.getAddEnglishPage);
+router.post("/addenglish", async (req, res) => {
+    try {
+      console.log("🔹 Received Data:", req.body);
 
+  
+      const { title, rating, genre, cast, runtime } = req.body;
+  
+      if (!title || !rating || !genre || !cast || !runtime) {
+        return res.status(400).json({ error: "All fields are required!" });
+      }
+  
+      const newEnglish = new English({ title, rating, genre, cast, runtime });
+      await newEnglish.save();
+  
+      res.redirect("/hollywood");
+    } catch (error) {
+      console.error("❌ Error adding English movie:", error);
+      res.status(500).json({ error: error.message || "Something went wrong!" });
+    }
+  });
 
-
-
+  router.get("/indian/edit/:id", homeController.getEditIndianPage);
+  router.post("/indian/update/:id", homeController.updateIndian);
+  router.get("/indian/delete/:id", homeController.deleteIndian);
+  router.get("/addindian", homeController.getAddIndianPage);
+  router.post("/addindian", async (req, res) => {
+      try {
+        console.log("🔹 Received Data:", req.body);
+  
+    
+        const { title, year, genre, director, cast,overview } = req.body;
+    
+        if (!title || !year || !genre || !director || !cast || !overview) {
+          return res.status(400).json({ error: "All fields are required!" });
+        }
+    
+        const newIndian = new Indian({ title, year, genre,director ,cast, overview });
+        await newIndian.save();
+    
+        res.redirect("/indian");
+      } catch (error) {
+        console.error("❌ Error adding Indian movie:", error);
+        res.status(500).json({ error: error.message || "Something went wrong!" });
+      }
+    });
+  
+    router.get("/webseries/edit/:id", homeController.getAddWebseriesPage);
+    router.post("/webseries/update/:id", homeController.updateWebseries);
+    router.get("/webseries/delete/:id", homeController.deleteWebseries);
+    router.get("/addwebseries", homeController.getAddWebseriesPage);
+    router.post("/addiwebseries", async (req, res) => {
+        try {
+          console.log("🔹 Received Data:", req.body);
+    
+      
+          const { title, yearReleased, contentRating, rating, genre,noofSeasons, streamingPlatform} = req.body;
+      
+          if (!title || !yearReleased || !contentRating|| !rating || !genre || !noofSeasons || !streamingPlatform ) {
+            return res.status(400).json({ error: "All fields are required!" });
+          }
+      
+          const newWebseries = new webSeries({ title, yearReleased, contentRating,rating ,genre, noofSeasons,streamingPlatform });
+          await newWebseries.save();
+      
+          res.redirect("/webseries");
+        } catch (error) {
+          console.error("❌ Error adding Webseires:", error);
+          res.status(500).json({ error: error.message || "Something went wrong!" });
+        }
+      });
+  
 
 
 

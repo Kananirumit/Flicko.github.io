@@ -1,0 +1,42 @@
+<div class="container-fluid">
+    <div class="row">
+        <main class="col-md-9 ms-sm-auto px-3">
+            <h2 class="mt-4 text-light">Add Indian Movie</h2>
+
+            <form id="englishForm" action="/addindian" method="POST" class="p-3 rounded bg-dark text-light">
+                <input type="hidden" id="movieId" name="id">
+
+                <div class="row">
+                    <div class="col-md-6">
+                        <label class="form-label">Title:</label>
+                        <input type="text" id="title" name="title" class="form-control mb-2" required />
+                    </div>
+                    <div class="col-md-6">
+                        <label class="form-label">Year:</label>
+                        <input type="text" name="year" class="form-control mb-2" required />
+                    </div>
+                    <div class="col-md-6">
+                        <label class="form-label">Genres:</label>
+                        <input type="text" name="genre" class="form-control mb-2" required />
+                    </div>
+                    <div class="col-md-6">
+                        <label class="form-label">Director:</label>
+                        <input type="text" name="director" class="form-control mb-2" required />
+                    </div>
+                    <div class="col-md-6">
+                        <label class="form-label">Cast:</label>
+                        <input type="text" name="cast" class="form-control mb-2" required />
+                    </div>
+                    <div class="col-md-6">
+                        <label class="form-label">overview</label>
+                        <input type="text" name="overview" class="form-control mb-2" required />
+                    </div>
+                </div>
+
+                <button type="submit" class="btn btn-primary mt-3 w-100">Add Movie</button>
+            </form>
+
+            <hr class="text-light">
+        </main>
+    </div>
+</div>

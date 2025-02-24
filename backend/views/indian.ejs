@@ -2,102 +2,102 @@
   <main class="main">
     <div class="container-fluid">
       <div class="row">
-        <!-- main title -->
+        <!-- Main Title -->
         <div class="col-12">
-          <div class="main__title">
-            <h2>Indian Movies</h2>
-            <a href="add-item.html" class="main__title-link">
-              <span>Add Item</span>
+          <div class="main__title d-flex justify-content-between align-items-center">
+            <h2 class="text-light">Indian Movies</h2>
+            <a href="/addindian" class="btn btn-primary">
+              <i class="fa fa-plus"></i> Add Movie
             </a>
           </div>
         </div>
-        <!-- end main title -->
       </div>
-      <div class="row mb-3">
+
+      <!-- Search Bar -->
+      <div class="row">
         <div class="col-12">
           <div class="search-container">
             <form action="/indian" method="GET">
-              <input
-                type="text"
-                name="search"
-                placeholder="Search here..."
-                value="<%= searchQuery %>"
-              />
-              <button type="submit">Search</button>
+              <input type="text" name="search" placeholder="Search Movie..." value="<%= searchQuery %>" />
+              <button type="submit"><i class="fa fa-search"></i></button>
             </form>
           </div>
         </div>
       </div>
+
+      <!-- Table -->
       <div class="row">
-        <!-- dashbox -->
-        <div class="col-12 col-xl-12">
+        <div class="col-12">
           <div class="dashbox">
-            <div class="dashbox__table-wrap dashbox__table-wrap--1">
-              <table class="table text-white">
-                  <thead>
-                    <tr>
-                      <th>#</th>
-                      <th>Poster</th>
-                      <th>Title</th>
-                      <th>Year</th>
-                      <th>Genre</th>
-                      <th>Director</th>
-                      <th>Cast</th>
-                      <th>Overview</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <% if (!indianMovies || indianMovies.length === 0) { %>
-                      <tr>
-                        <td colspan="9" class="text-center">No movies found</td>
-                      </tr>
-                    <% } else { %>
-                      <% indianMovies.forEach((indianMovie, index) => { %>
-                        <tr>
-                          <td><%= (currentPage - 1) * 10 + index + 1 %></td>
-                          <td>
-                              <img src="<%= indianMovie.posterUrl ? indianMovie.posterUrl : 'assets/img/default-poster.jpg' %>"
-                                   alt="<%= indianMovie.title %> Poster"
-                                   width="100"
-                                   onerror="this.onerror=null; this.src='assets/img/default-poster.jpg';">
-                          </td>
-                          <td><%= indianMovie.title || "N/A" %></td>
-                          <td><%= indianMovie.year || "N/A" %></td>
-                          <td><%= indianMovie.genre || "N/A" %></td>
-                          <td><%= indianMovie.director || "N/A" %></td>
-                          <td><%= indianMovie.cast || "N/A" %></td>
-                          <td><%= indianMovie.overview || "N/A" %></td>
-                        </tr>
-                      <% }) %>
-                    <% } %>
-                  </tbody>
-                </table>
-                
-              <!-- Pagination Section -->
+            <div class="dashbox__table-wrap table-responsive">
+              <table class="table table-dark table-hover table-striped">
+                <thead>
+                  <tr>
+                    <th>#</th>
+                    <th>Poster</th>
+                    <th>Title</th>
+                    <th>Year</th>
+                    <th>Genre</th>
+                    <th>Director</th>
+                    <th>Cast</th>
+                    <th>Overview</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <% if (!indianMovies || indianMovies.length === 0) { %>
+                  <tr>
+                    <td colspan="9" class="text-center">No movies found</td>
+                  </tr>
+                  <% } else { %> 
+                  <% indianMovies.forEach((movie, index) => { %>
+                  <tr class="movie-row">
+                    <td><%= (currentPage - 1) * 10 + index + 1 %></td>
+                    <td>
+                      <img src="<%= movie.posterUrl || '/assets/img/default-poster.jpg' %>" 
+                           alt="<%= movie.title %>" width="80" />
+                    </td>
+                    <td class="movie-title"><%= movie.title || "N/A" %></td>
+                    <td><%= movie.year || "N/A" %></td>
+                    <td class="movie-genre"><%= movie.genre || "N/A" %></td>
+                    <td><%= movie.director || "N/A" %></td>
+                    <td><%= movie.cast || "N/A" %></td>
+                    <td><%= movie.overview || "N/A" %></td>
+                    <td>
+                      <a href="/indian/edit/<%= movie._id %>" class="btn btn-warning btn-sm">
+                        <i class="fa fa-edit"></i>
+                      </a>
+                      <a href="/indian/delete/<%= movie._id %>" class="btn btn-danger btn-sm" onclick="return confirm('Are you sure?')">
+                        <i class="fa fa-trash"></i>
+                      </a>
+                    </td>
+                  </tr>
+                  <% }) %> 
+                  <% } %>
+                </tbody>
+              </table>
+
+              <!-- Pagination -->
               <div class="pagination-container">
                 <% if (currentPage > 1) { %>
-                    <a href="/indian?page=1" class="pagination-btn">« First</a>
-                    <a href="/indain?page=<%= currentPage - 1 %>" class="pagination-btn">« Prev</a>
-                <% } %>
-            
-                <% for (let i = 1; i <= totalPages; i++) { %>
-                    <% if (i === 1 || i === totalPages || (i >= currentPage - 2 && i <= currentPage + 2)) { %>
-                        <a href="/indian?page=<%= i %>" 
-                           class="pagination-btn <%= i === currentPage ? 'active' : '' %>">
-                            <%= i %>
-                        </a>
-                    <% } else if (i === currentPage - 3 || i === currentPage + 3) { %>
-                        <span class="pagination-dots">...</span>
-                    <% } %>
-                <% } %>
-            
+                <a href="/indian?page=1" class="pagination-btn">« First</a>
+                <a href="/indian?page=<%= currentPage - 1 %>" class="pagination-btn">« Prev</a>
+                <% } %> 
+                <% for (let i = 1; i <= totalPages; i++) { %> 
+                <% if (i === 1 || i === totalPages || (i >= currentPage - 2 && i <= currentPage + 2)) { %>
+                <a href="/indian?page=<%= i %>" class="pagination-btn <%= i === currentPage ? 'active' : '' %>">
+                  <%= i %>
+                </a>
+                <% } else if (i === currentPage - 3 || i === currentPage + 3) { %>
+                <span class="pagination-dots">...</span>
+                <% } %> 
+                <% } %> 
                 <% if (currentPage < totalPages) { %>
-                    <a href="/indian?page=<%= currentPage + 1 %>" class="pagination-btn">Next »</a>
-                    <a href="/indian?page=<%= totalPages %>" class="pagination-btn">Last »</a>
+                <a href="/indian?page=<%= currentPage + 1 %>" class="pagination-btn">Next »</a>
+                <a href="/indian?page=<%= totalPages %>" class="pagination-btn">Last »</a>
                 <% } %>
-            </div>
-            <!-- End Pagination -->
-            
+              </div>
+
               <!-- End Pagination -->
             </div>
           </div>
