@@ -606,6 +606,7 @@ const postAddWebseries = async (req, res) => {
     if (!title || !yearReleased || !contentRating|| !rating || !genre || !noofSeasons || !streamingPlatform ) {
       console.log("⚠️ Missing Fields!");
       return res.status(400).json({ error: "All fields are required!" });
+      res.redirect("/addwebseries");
     }
 
     const newWebseries = new Webseries({title, yearReleased, contentRating, rating, genre,noofSeasons, streamingPlatform});

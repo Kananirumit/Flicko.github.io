@@ -91,7 +91,7 @@ router.post("/addenglish", async (req, res) => {
     router.post("/webseries/update/:id", homeController.updateWebseries);
     router.get("/webseries/delete/:id", homeController.deleteWebseries);
     router.get("/addwebseries", homeController.getAddWebseriesPage);
-    router.post("/addiwebseries", async (req, res) => {
+    router.post("/addwebseries", async (req, res) => {
         try {
           console.log("🔹 Received Data:", req.body);
     
