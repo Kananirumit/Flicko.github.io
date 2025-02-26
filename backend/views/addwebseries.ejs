@@ -1,11 +1,11 @@
 <div class="container-fluid">
   <div class="row">
     <main class="col-md-9 ms-sm-auto px-3">
-      <h2 class="mt-4 text-light">Add English Movie</h2>
+      <h2 class="mt-4 text-light">Add Webseries</h2>
 
       <form
         id="englishForm"
-        action="/addenglish"
+        action="/addwebseries"
         method="POST"
         class="p-3 rounded bg-dark text-light"
       >
@@ -33,15 +33,6 @@
             />
           </div>
           <div class="col-md-6">
-            <label class="form-label">Rating:</label>
-            <input
-              type="text"
-              name="rating"
-              class="form-control mb-2"
-              required
-            />
-          </div>
-          <div class="col-md-6">
             <label class="form-label">Contant Rating:</label>
             <input
               type="text"
@@ -51,10 +42,10 @@
             />
           </div>
           <div class="col-md-6">
-            <label class="form-label">No of Seasons:</label>
+            <label class="form-label">Rating:</label>
             <input
               type="text"
-              name="no of seasons"
+              name="rating"
               class="form-control mb-2"
               required
             />
@@ -68,6 +59,16 @@
               required
             />
           </div>
+          <div class="col-md-6">
+            <label class="form-label">No of Seasons:</label>
+            <input
+              type="text"
+              name="noofSeasons"
+              class="form-control mb-2"
+              required
+            />
+          </div>
+
           <div class="col-md-6">
             <label class="form-label">StreamingPlatform:</label>
             <input

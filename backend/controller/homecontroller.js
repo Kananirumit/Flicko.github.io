@@ -606,7 +606,6 @@ const postAddWebseries = async (req, res) => {
     if (!title || !yearReleased || !contentRating|| !rating || !genre || !noofSeasons || !streamingPlatform ) {
       console.log("⚠️ Missing Fields!");
       return res.status(400).json({ error: "All fields are required!" });
-      res.redirect("/addwebseries");
     }
 
     const newWebseries = new Webseries({title, yearReleased, contentRating, rating, genre,noofSeasons, streamingPlatform});
@@ -639,7 +638,7 @@ const getEditWebseriesPage = async (req, res) => {
           return res.status(404).send("Webseries not found");
       }
 
-      res.render("editWebseries", { webseries, layout: "layout/authlayout" });
+      res.render("editwebseries", { webseries, layout: "layout/layout" });
   } catch (error) {
       console.error("Error fetching English movie for edit:", error);
       res.status(500).send("Something went wrong!");
