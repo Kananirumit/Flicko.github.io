@@ -87,7 +87,7 @@ router.post("/addenglish", async (req, res) => {
       }
     });
   
-    router.get("/webseries/edit/:id", homeController.getAddWebseriesPage);
+    router.get("/webseries/edit/:id", homeController.getEditWebseriesPage);
     router.post("/webseries/update/:id", homeController.updateWebseries);
     router.get("/webseries/delete/:id", homeController.deleteWebseries);
     router.get("/addwebseries", homeController.getAddWebseriesPage);
@@ -156,6 +156,9 @@ router.get("/delete/:id", async (req, res) => {
         res.status(500).send("Server error: " + error.message);
     }
 });
+
+
+router.get("/api/index-movies", homeController.getMoviesForIndex);
 
 // 🔐 User Routes
 router.post("/register", userController.registerUser);

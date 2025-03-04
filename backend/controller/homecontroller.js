@@ -665,6 +665,24 @@ try {
     res.status(500).send("Something went wrong!");
 }
 };
+exports.getMoviesForIndex = async (req, res) => {
+  try {
+    const englishMovies = await EnglishModel.find().limit(3);
+    const animeMovies = await AnimeModel.find().limit(3);
+    const webMovies = await WebSeriesModel.find().limit(3);
+    const indianMovies = await IndianModel.find().limit(3);
+
+    res.json({
+      english: englishMovies,
+      anime: animeMovies,
+      web: webMovies,
+      indian: indianMovies,
+    });
+  } catch (error) {
+    console.error("❌ Error fetching movies:", error);
+    res.status(500).json({ error: "Something went wrong!" });
+  }
+};
 
 // --- Export Controllers ---
 module.exports = {
@@ -700,4 +718,5 @@ module.exports = {
   deleteWebseries,
   getEditWebseriesPage,
   updateWebseries,
+  getMoviesForIndex: exports.getMoviesForIndex,  
 };

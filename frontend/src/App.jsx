@@ -7,7 +7,7 @@ import Authlayout from './layout/Authlayout';
 import Login from './pages/Login';
 import Layout from './layout/Layout';
 import Index from './pages/Index';
-import Buttons from './pages/Buttons';
+import Indian from './pages/indian';
 import Cards from './pages/Cards';
 import Utilitiescolor from './pages/Utilities-color';
 import Utilitiesborder from './pages/Utilities-border';
@@ -28,7 +28,7 @@ function App() {
 
           <Route path="/" element={<Layout />} >
             <Route path="/" element={<Index />} />
-            <Route path='/buttons' element={<Buttons />} />
+            <Route path='/indian' element={<Indian />} />
             <Route path="/cards" element={<Cards />} />
             <Route path="/utilities-color" element={<Utilitiescolor />} />
             <Route path="/utilities-border" element={<Utilitiesborder />} />
