@@ -5,7 +5,7 @@ const webSeriesSchema = new mongoose.Schema({
   yearReleased: { type: Number, required: true },  // Match MongoDB field
   contentRating: { type: String, required: true }, // Changed from Number to String
   rating: { type: Number, required: true },
-  posterUrl: { type: String, required: true },
+  posterUrl: { type: String},
   genre: { type: String, required: true },
   noofSeasons: { type: String, required: true },  // Standardized field name
   streamingPlatform: { type: String, required: true },  // Standardized field name

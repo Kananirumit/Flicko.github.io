@@ -8,7 +8,7 @@ const Webseries = require("../models/webseriesModel");
 const ContentTypes = require("../models/contentTypesModel");
 const Genres = require("../models/genresModel");
 const UpcomingMovie = require("../models/upcomingMoviesModel");
-const fetchMoviePoster = require("../fetchMoviePoster");
+// const fetchMoviePoster = require("../fetchMoviePoster");
 
 const OMDB_API_KEY_MOVIES = process.env.OMDB_API_KEY_MOVIES || "74a6f5ec"; // API key for English and Indian Movies
 const OMDB_API_KEY_SERIES = process.env.OMDB_API_KEY_SERIES || "8909b00d"; // API key for Web Series and Anime
