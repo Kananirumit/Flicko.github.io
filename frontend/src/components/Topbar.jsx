@@ -1,163 +1,121 @@
 import React from 'react';
-import { Navbar, Nav, Form, FormControl, Button, Dropdown, Badge, Image } from 'react-bootstrap';
-import { FaBars } from "react-icons/fa";
-import { FaSearch } from "react-icons/fa";
-import { FaBell } from "react-icons/fa";
-import { IoIosMail } from "react-icons/io";
-import { FaDonate } from "react-icons/fa";
-import { IoIosWarning } from "react-icons/io";
+
 export default function Topbar() {
   return (
-    <div id="content-wrapper" className="d-flex flex-column">
-      <div id="content">
-        <Navbar bg="light" expand="lg" className="mb-4 shadow">
-          <Button variant="link" className="d-md-none rounded-circle mr-3">
-            <FaBars />
-          </Button>
-          <Form inline className="mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
-            <FormControl type="text" placeholder="Search for..." className="mr-sm-2 bg-light border-0 small" />
+    <header className="header">
+    <div className="container">
+      <div className="row">
+        <div className="col-12">
+          <div className="header__content">
+            <a href="index.html" className="header__logo">
+              <img src="img/logo.svg" alt="" />
+            </a>
 
-            <Button variant="primary"><FaSearch /></Button>
+            <div class="header__categories">
+              <button class="header__categories-btn" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <span></span>
+                <span></span>
+              </button>
 
-          </Form>
-          <Nav className="ml-auto">
-            <Dropdown as={Nav.Item}>
-              <Dropdown.Toggle as={Nav.Link} className="no-arrow d-sm-none">
-                <FaSearch />
-              </Dropdown.Toggle>
-              <Dropdown.Menu className="dropdown-menu-right p-3 shadow animated--grow-in">
-                <Form inline className="mr-auto w-100 navbar-search">
-                  <FormControl type="text" placeholder="Search for..." className="mr-sm-2 bg-light border-0 small" />
-                  <Button variant="primary">
-                    <FaSearch />
-                  </Button>
-                </Form>
-              </Dropdown.Menu>
-            </Dropdown>
-            <Dropdown as={Nav.Item} className="no-arrow mx-1">
-              <Dropdown.Toggle as={Nav.Link}>
-                <FaBell />
-                <Badge variant="danger" className="badge-counter">3+</Badge>
-              </Dropdown.Toggle>
-              <Dropdown.Menu className="dropdown-menu-right shadow animated--grow-in">
-                <Dropdown.Header>Alerts Center</Dropdown.Header>
-                <Dropdown.Item href="#">
-                  <div className="d-flex align-items-center">
-                    <div className="icon-circle bg-primary">
-                      <IoIosMail />
-                    </div>
-                    <div className="ml-3">
-                      <div className="small text-gray-500">December 12, 2019</div>
-                      <span className="font-weight-bold">A new monthly report is ready to download!</span>
-                    </div>
-                  </div>
-                </Dropdown.Item>
-                <Dropdown.Item href="#">
-                  <div className="d-flex align-items-center">
-                    <div className="icon-circle bg-success">
-                      <FaDonate />
-                    </div>
-                    <div className="ml-3">
-                      <div className="small text-gray-500">December 7, 2019</div>
-                      $290.29 has been deposited into your account!
-                    </div>
-                  </div>
-                </Dropdown.Item>
-                <Dropdown.Item href="#">
-                  <div className="d-flex align-items-center">
-                    <div className="icon-circle bg-warning">
-                      <IoIosWarning />
-                    </div>
-                    <div className="ml-3">
-                      <div className="small text-gray-500">December 2, 2019</div>
-                      Spending Alert: We've noticed unusually high spending for your account.
-                    </div>
-                  </div>
-                </Dropdown.Item>
-                <Dropdown.Item href="#" className="text-center small text-gray-500">Show All Alerts</Dropdown.Item>
-              </Dropdown.Menu>
-            </Dropdown>
-            <Dropdown as={Nav.Item} className="no-arrow mx-1">
-              <Dropdown.Toggle as={Nav.Link}>
-                <IoIosMail />
-                <Badge variant="danger" className="badge-counter">7</Badge>
-              </Dropdown.Toggle>
-              <Dropdown.Menu className="dropdown-menu-right shadow animated--grow-in">
-                <Dropdown.Header>Message Center</Dropdown.Header>
-                <Dropdown.Item href="#">
-                  <div className="d-flex align-items-center">
-                    <Image className="rounded-circle" src="img/undraw_profile_1.svg" alt="..." width="40" height="40" />
-                    <div className="status-indicator bg-success"></div>
-                    <div className="ml-3">
-                      <div className="text-truncate">Hi there! I am wondering if you can help me with a problem I've been having.</div>
-                      <div className="small text-gray-500">Emily Fowler · 58m</div>
-                    </div>
-                  </div>
-                </Dropdown.Item>
-                <Dropdown.Item href="#">
-                  <div className="d-flex align-items-center">
-                    <Image className="rounded-circle" src="img/undraw_profile_2.svg" alt="..." width="40" height="40" />
-                    <div className="status-indicator"></div>
-                    <div className="ml-3">
-                      <div className="text-truncate">I have the photos that you ordered last month, how would you like them sent to you?</div>
-                      <div className="small text-gray-500">Jae Chun · 1d</div>
-                    </div>
-                  </div>
-                </Dropdown.Item>
-                <Dropdown.Item href="#">
-                  <div className="d-flex align-items-center">
-                    <Image className="rounded-circle" src="img/undraw_profile_3.svg" alt="..." width="40" height="40" />
-                    <div className="status-indicator bg-warning"></div>
-                    <div className="ml-3">
-                      <div className="text-truncate">Last month's report looks great, I am very happy with the progress so far, keep up the good work!</div>
-                      <div className="small text-gray-500">Morgan Alvarez · 2d</div>
-                    </div>
-                  </div>
-                </Dropdown.Item>
-                <Dropdown.Item href="#">
-                  <div className="d-flex align-items-center">
-                    <Image className="rounded-circle" src="https://source.unsplash.com/Mv9hjnEUHR4/60x60" alt="..." width="40" height="40" />
-                    <div className="status-indicator bg-success"></div>
-                    <div className="ml-3">
-                      <div className="text-truncate">Am I a good boy? The reason I ask is because someone told me that people say this to all dogs, even if they aren't good...</div>
-                      <div className="small text-gray-500">Chicken the Dog · 2w</div>
-                    </div>
-                  </div>
-                </Dropdown.Item>
-                <Dropdown.Item href="#" className="text-center small text-gray-500">Read More Messages</Dropdown.Item>
-              </Dropdown.Menu>
-            </Dropdown>
-            <Nav.Item className="d-none d-sm-block">
-              <div className="topbar-divider"></div>
-            </Nav.Item>
-            <Dropdown as={Nav.Item} className="no-arrow">
-              <Dropdown.Toggle as={Nav.Link}>
-                <span className="mr-2 d-none d-lg-inline text-gray-600 small">Douglas McGee</span>
-                <Image className="img-profile rounded-circle" src="img/undraw_profile.svg" alt="..." width="40" height="40" />
-              </Dropdown.Toggle>
-              <Dropdown.Menu className="dropdown-menu-right shadow animated--grow-in">
-                <Dropdown.Item href="#">
-                  <i className="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
-                  Profile
-                </Dropdown.Item>
-                <Dropdown.Item href="#">
-                  <i className="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
-                  Settings
-                </Dropdown.Item>
-                <Dropdown.Item href="#">
-                  <i className="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>
-                  Activity Log
-                </Dropdown.Item>
-                <Dropdown.Divider />
-                <Dropdown.Item href="#" data-toggle="modal" data-target="#logoutModal">
-                  <i className="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
-                  Logout
-                </Dropdown.Item>
-              </Dropdown.Menu>
-            </Dropdown>
-          </Nav>
-        </Navbar>
+              <div class="dropdown-menu header__dropdown-menu header__dropdown-menu--categories">
+                <ul class="header__categories-list">
+                  <li><a href="catalog1.html">Films</a></li>
+                  <li><a href="catalog2.html">TV Series</a></li>
+                  <li><a href="catalog1.html">Anime</a></li>
+                  <li><a href="catalog2.html">Cartoons</a></li>
+                </ul>
+                <ul class="header__categories-list">
+                  <li><a href="catalog1.html">Catalog Grid</a></li>
+                  <li><a href="catalog2.html">Catalog List</a></li>
+                  <li><a href="details1.html">Details Film</a></li>
+                  <li><a href="details2.html">Details TV Series</a></li>
+                </ul>
+              </div>
+            </div>
+
+            <ul class="header__nav">
+              <li className="header__nav-item">
+                <a class="header__nav-link" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Home <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17,9.17a1,1,0,0,0-1.41,0L12,12.71,8.46,9.17a1,1,0,0,0-1.41,0,1,1,0,0,0,0,1.42l4.24,4.24a1,1,0,0,0,1.42,0L17,10.59A1,1,0,0,0,17,9.17Z"/></svg></a>
+
+                <ul class="dropdown-menu header__dropdown-menu">
+                  <li><a href="index.html">Home style 1</a></li>
+                  <li><a href="index2.html">Home style 2</a></li>
+                </ul>
+              </li>
+
+              <li class="header__nav-item">
+                <a class="header__nav-link" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Catalog <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17,9.17a1,1,0,0,0-1.41,0L12,12.71,8.46,9.17a1,1,0,0,0-1.41,0,1,1,0,0,0,0,1.42l4.24,4.24a1,1,0,0,0,1.42,0L17,10.59A1,1,0,0,0,17,9.17Z"/></svg></a>
+
+                <ul class="dropdown-menu header__dropdown-menu">
+                  <li><a href="catalog1.html">Catalog Grid</a></li>
+                  <li><a href="catalog2.html">Catalog List</a></li>
+                  <li><a href="details1.html">Details Movie</a></li>
+                  <li><a href="details2.html">Details TV Series</a></li>
+                </ul>
+              </li>
+
+              <li class="header__nav-item">
+                <a href="pricing.html" class="header__nav-link">Pricing plans</a>
+              </li>
+
+              <li class="header__nav-item">
+                <a class="header__nav-link" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Pages <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17,9.17a1,1,0,0,0-1.41,0L12,12.71,8.46,9.17a1,1,0,0,0-1.41,0,1,1,0,0,0,0,1.42l4.24,4.24a1,1,0,0,0,1.42,0L17,10.59A1,1,0,0,0,17,9.17Z"/></svg></a>
+
+                <ul class="dropdown-menu header__dropdown-menu">
+                  <li><a href="about.html">About us</a></li>
+                  <li><a href="faq.html">Help center</a></li>
+                  <li><a href="profile.html">Profile</a></li>
+                  <li><a href="actor.html">Actor</a></li>
+                  <li><a href="contacts.html">Contacts</a></li>
+                  <li><a href="privacy.html">Privacy policy</a></li>
+                </ul>
+              </li>
+
+              <li class="header__nav-item">
+                <a class="header__nav-link header__nav-link--more" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12,10a2,2,0,1,0,2,2A2,2,0,0,0,12,10ZM5,10a2,2,0,1,0,2,2A2,2,0,0,0,5,10Zm14,0a2,2,0,1,0,2,2A2,2,0,0,0,19,10Z"/></svg>
+                </a>
+
+                <ul class="dropdown-menu header__dropdown-menu">
+                  <li><a href="signin.html">Sign In</a></li>
+                  <li><a href="signup.html">Sign Up</a></li>
+                  <li><a href="forgot.html">Forgot password</a></li>
+                  <li><a href="404.html">404 Page</a></li>
+                </ul>
+              </li>
+            </ul>
+
+            <div class="header__actions">
+              <form action="#" class="header__search">
+                <input type="text" placeholder="Search"></input>
+                <button type="button"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21.71,20.29,18,16.61A9,9,0,1,0,16.61,18l3.68,3.68a1,1,0,0,0,1.42,0A1,1,0,0,0,21.71,20.29ZM11,18a7,7,0,1,1,7-7A7,7,0,0,1,11,18Z"></path></svg></button>
+              </form>
+
+              <div className="header__language">
+                <a class="header__nav-link" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">EN <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17,9.17a1,1,0,0,0-1.41,0L12,12.71,8.46,9.17a1,1,0,0,0-1.41,0,1,1,0,0,0,0,1.42l4.24,4.24a1,1,0,0,0,1.42,0L17,10.59A1,1,0,0,0,17,9.17Z"/></svg></a>
+
+                <ul class="dropdown-menu header__dropdown-menu header__dropdown-menu--lang">
+                  <li><a href="#">English</a></li>
+                  <li><a href="#">Spanish</a></li>
+                  <li><a href="#">French</a></li>
+                </ul>
+              </div>
+
+              <a href="signin.html" class="header__sign-in">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,12a1,1,0,0,0-1-1H11.41l2.3-2.29a1,1,0,1,0-1.42-1.42l-4,4a1,1,0,0,0-.21.33,1,1,0,0,0,0,.76,1,1,0,0,0,.21.33l4,4a1,1,0,0,0,1.42,0,1,1,0,0,0,0-1.42L11.41,13H19A1,1,0,0,0,20,12ZM17,2H7A3,3,0,0,0,4,5V19a3,3,0,0,0,3,3H17a3,3,0,0,0,3-3V16a1,1,0,0,0-2,0v3a1,1,0,0,1-1,1H7a1,1,0,0,1-1-1V5A1,1,0,0,1,7,4H17a1,1,0,0,1,1,1V8a1,1,0,0,0,2,0V5A3,3,0,0,0,17,2Z"/></svg>
+                <span>sign in</span>
+              </a>
+            </div>
+
+            <button class="header__btn" type="button">
+              <span></span>
+              <span></span>
+              <span></span>
+            </button>
+          </div>
+        </div>
       </div>
     </div>
+  </header>
   );
 }
