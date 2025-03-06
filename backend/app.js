@@ -5,7 +5,7 @@ const session = require('express-session');
 const axios = require("axios");
 const route = require("./router");
 const dotenv = require("dotenv");
-
+const cors = require("cors");
 dotenv.config();
 
 const app = express();

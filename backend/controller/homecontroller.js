@@ -266,7 +266,7 @@ const getIndianMovies = async (req, res) => {
       indianMovies: updatedIndianMovies,
       currentPage: page,
       totalPages,
-      searchQuery, // Send searchQuery to maintain input value in the frontend
+      searchQuery, 
     });
   } catch (error) {
     console.error("Error fetching Indian movies:", error);

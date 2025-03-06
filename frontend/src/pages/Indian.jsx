@@ -6,9 +6,15 @@ export default function IndianMovies() {
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    fetch("http://127.0.0.1:4000/indian") // Ensure this matches your backend route
-      .then((response) => response.json())
+    fetch("http://127.0.0.1:4000/api/indian")
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error("Network response was not ok");
+        }
+        return response.json();
+      })
       .then((data) => {
+        console.log("Fetched Data:", data); 
         setMovies(data.movies || []);
         setLoading(false);
       })
@@ -18,6 +24,7 @@ export default function IndianMovies() {
         setLoading(false);
       });
   }, []);
+  
 
   if (loading) return <h2>Loading...</h2>;
   if (error) return <h2>Error: {error}</h2>;

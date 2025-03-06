@@ -1,6 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const homeController = require("./controller/homeController");
+const homeApiController = require("./controller/homeApiController");
 const userController = require("./controller/userController");
 const User = require("./models/userModel");
 const AnimeModel = require("./models/animeModel");
@@ -158,7 +159,8 @@ router.get("/delete/:id", async (req, res) => {
 });
 
 
-router.get("/api/index-movies", homeController.getMoviesForIndex);
+// router.get("/api/index-movies", homeController.getMoviesForIndex);
+router.get("/api/indian",homeApiController.getIndianMovies);
 
 // 🔐 User Routes
 router.post("/register", userController.registerUser);
