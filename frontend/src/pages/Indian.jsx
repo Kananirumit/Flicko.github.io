@@ -6,7 +6,7 @@ export default function IndianMovies() {
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    fetch("http://127.0.0.1:4000/api/indian")
+    fetch("http://127.0.0.1:4100/api/indian")
       .then((response) => {
         if (!response.ok) {
           throw new Error("Network response was not ok");
@@ -33,9 +33,9 @@ export default function IndianMovies() {
     <div className="container">
       <h1 className="text-light">Indian Movies</h1>
       <div className="row">
-        {movies.length > 0 ? (
+        {indianMovies.length > 0 ? (
           movies.map((movie) => (
-            <div key={movie._id} className="col-md-3 mb-4">
+            <div key={movies._id} className="col-md-3 mb-4">
               <div className="card bg-dark text-white">
                 <img
                   src={movie.posterUrl || "/assets/img/default-poster.jpg"}

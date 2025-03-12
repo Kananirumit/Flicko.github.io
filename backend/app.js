@@ -60,7 +60,7 @@ app.use("/", route);
 
 const startServer = async () => {
   await connectMongoDB();
-  const PORT = process.env.PORT || 4000;
+  const PORT = process.env.PORT || 4100;
   app.listen(PORT, () => {
     console.log(`🚀 Server is running on port ${PORT}`);
   });
