@@ -9,6 +9,8 @@ const cors = require("cors");
 dotenv.config();
 
 const app = express();
+app.use(cors({ origin: 'http://localhost:5173' }));
+
 
 const Content = require("./models/EnglishModel");
 
@@ -60,7 +62,7 @@ app.use("/", route);
 
 const startServer = async () => {
   await connectMongoDB();
-  const PORT = process.env.PORT || 4100;
+  const PORT = process.env.PORT || 4200;
   app.listen(PORT, () => {
     console.log(`🚀 Server is running on port ${PORT}`);
   });

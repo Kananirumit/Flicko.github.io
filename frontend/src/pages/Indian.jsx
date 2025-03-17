@@ -4,18 +4,16 @@ export default function IndianMovies() {
   const [movies, setMovies] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  const [page, setPage] = useState(1);
+  const [hasMore, setHasMore] = useState(true);
 
   useEffect(() => {
-    fetch("http://127.0.0.1:4100/api/indian")
-      .then((response) => {
-        if (!response.ok) {
-          throw new Error("Network response was not ok");
-        }
-        return response.json();
-      })
+    setLoading(true);
+    fetch(`http://127.0.0.1:4200/api/indian?page=${page}`)
+      .then((response) => response.json())
       .then((data) => {
-        console.log("Fetched Data:", data); 
-        setMovies(data.movies || []);
+        setMovies((prevMovies) => [...prevMovies, ...data.movies]); // Append new data
+        setHasMore(data.currentPage < data.totalPages); // Check if more pages exist
         setLoading(false);
       })
       .catch((error) => {
@@ -23,19 +21,15 @@ export default function IndianMovies() {
         setError("Failed to fetch movies");
         setLoading(false);
       });
-  }, []);
-  
-
-  if (loading) return <h2>Loading...</h2>;
-  if (error) return <h2>Error: {error}</h2>;
+  }, [page]);
 
   return (
     <div className="container">
       <h1 className="text-light">Indian Movies</h1>
       <div className="row">
-        {indianMovies.length > 0 ? (
+        {movies.length > 0 ? (
           movies.map((movie) => (
-            <div key={movies._id} className="col-md-3 mb-4">
+            <div key={movie._id} className="col-md-3 mb-4">
               <div className="card bg-dark text-white">
                 <img
                   src={movie.posterUrl || "/assets/img/default-poster.jpg"}
@@ -55,6 +49,12 @@ export default function IndianMovies() {
           <h2 className="text-center text-light">No Movies Found</h2>
         )}
       </div>
+
+      {hasMore && (
+        <button className="btn btn-primary mt-4" onClick={() => setPage(page + 1)}>
+          Load More
+        </button>
+      )}
     </div>
   );
 }
