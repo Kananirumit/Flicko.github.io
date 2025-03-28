@@ -8,6 +8,7 @@ import Login from './pages/Login';
 import Layout from './layout/Layout';
 import Index from './pages/Index';
 import Indian from './pages/indian';
+import English from './pages/english';
 import Cards from './pages/Cards';
 import Utilitiescolor from './pages/Utilities-color';
 import Utilitiesborder from './pages/Utilities-border';
@@ -29,6 +30,7 @@ function App() {
           <Route path="/" element={<Layout />} >
             <Route path="/" element={<Index />} />
             <Route path='/indian' element={<Indian />} />
+            <Route path='/english' element={<English />} />
             <Route path="/cards" element={<Cards />} />
             <Route path="/utilities-color" element={<Utilitiescolor />} />
             <Route path="/utilities-border" element={<Utilitiesborder />} />
