@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-export default function IndianMovies() {
+export default function EnglishMovies() {
   const [movies, setMovies] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -11,7 +11,7 @@ export default function IndianMovies() {
 
   useEffect(() => {
     setLoading(true);
-    fetch(`http://127.0.0.1:4200/api/hollywood?page=${page}`)
+    fetch(`http://127.0.0.1:4200/api/english?page=${page}`)
       .then((response) => response.json())
       .then((data) => {
         setMovies((prevMovies) => [...prevMovies, ...data.movies]);
