@@ -43,7 +43,7 @@ export default function EnglishMovies() {
                 />
                 <div className="movie-details">
                   <h5 className="movie-title">{movie.title}</h5>
-                  <p className="movie-year">{movie.year || "N/A"}</p>
+                  <p className="movie-rating">{movie.rating || "N/A"}</p>
                   <p className="movie-genre">{movie.genre || "N/A"}</p>
                 </div>
               </div>
